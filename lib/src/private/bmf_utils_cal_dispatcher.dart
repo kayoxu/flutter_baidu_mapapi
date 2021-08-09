@@ -32,7 +32,7 @@ class BMFUtilsCalculateDispatcher {
       Map map = (await _calcChannel.invokeMethod(
           BMFCalculateMethodID.kCoordTransType,
           {
-            'coordinate': coordinate?.toMap(),
+            'coordinate': coordinate.toMap(),
             'fromType': fromType?.index,
             'toType': toType?.index
           } as dynamic)) as Map;
@@ -58,7 +58,7 @@ class BMFUtilsCalculateDispatcher {
     try {
       Map map = (await _calcChannel.invokeMethod(
           BMFCalculateMethodID.kGetDirectionFromCoords,
-          {'startCoord': startCoord?.toMap(), 'endCoord': endCoord?.toMap()}
+          {'startCoord': startCoord.toMap(), 'endCoord': endCoord.toMap()}
               as dynamic)) as Map;
 
       result = map['result'] as double;
@@ -82,7 +82,7 @@ class BMFUtilsCalculateDispatcher {
     try {
       Map map = (await _calcChannel.invokeMethod(
           BMFCalculateMethodID.kAreaBetweenCoordinates,
-          {'leftTop': leftTop?.toMap(), 'rightBottom': rightBottom?.toMap()}
+          {'leftTop': leftTop.toMap(), 'rightBottom': rightBottom.toMap()}
               as dynamic)) as Map;
 
       result = map['result'] as double;
@@ -104,7 +104,7 @@ class BMFUtilsCalculateDispatcher {
           BMFCalculateMethodID.kCalculatePolygonArea,
           {
             'polygon':
-                polygon?.map((coordinate) => coordinate?.toMap())?.toList()
+                polygon.map((coordinate) => coordinate.toMap()).toList()
           } as dynamic)) as Map;
       result = map['result'] as double;
     } on PlatformException catch (e) {
@@ -128,8 +128,8 @@ class BMFUtilsCalculateDispatcher {
       Map map = (await _calcChannel.invokeMethod(
           BMFCalculateMethodID.kPolygonContainsCoord,
           {
-            'coordinate': coord?.toMap(),
-            'polygon': polygon?.map((coord) => coord?.toMap())?.toList(),
+            'coordinate': coord.toMap(),
+            'polygon': polygon.map((coord) => coord.toMap()).toList(),
           } as dynamic)) as Map;
 
       result = map['result'] as bool;
@@ -154,7 +154,7 @@ class BMFUtilsCalculateDispatcher {
     try {
       Map map = (await _calcChannel.invokeMethod(
           BMFCalculateMethodID.kCircleContainsCoord,
-          {'coord': coord?.toMap(), 'center': center?.toMap(), 'radius': radius}
+          {'coord': coord.toMap(), 'center': center.toMap(), 'radius': radius}
               as dynamic)) as Map;
 
       result = map['result'] as bool;
@@ -178,7 +178,7 @@ class BMFUtilsCalculateDispatcher {
     try {
       Map map = (await _calcChannel.invokeMethod(
           BMFCalculateMethodID.kLocationDistance,
-          {'startCoord': startCoord?.toMap(), 'endCoord': endCoord?.toMap()}
+          {'startCoord': startCoord.toMap(), 'endCoord': endCoord.toMap()}
               as dynamic)) as Map;
 
       result = map['result'] as double;
@@ -204,8 +204,8 @@ class BMFUtilsCalculateDispatcher {
           BMFCalculateMethodID.kNearestPointToLine,
           {
             'polyLine':
-                polyLine?.map((linePoint) => linePoint?.toMap())?.toList(),
-            'coord': coord?.toMap()
+                polyLine.map((linePoint) => linePoint.toMap()).toList(),
+            'coord': coord.toMap()
           } as dynamic)) as Map?;
 
       result = BMFCoordinate.fromMap(map?['result']);
@@ -234,15 +234,15 @@ class BMFUtilsCalculateDispatcher {
 
     BMFCoordinate? result;
     try {
-      Map map = (await _calcChannel.invokeMethod(
+      Map? map = (await _calcChannel.invokeMethod(
           BMFCalculateMethodID.kPointToTheVerticalFootOfLine,
           {
-            'coord': coord?.toMap(),
-            'lineStart': lineStart?.toMap(),
-            'lineEnd': lineEnd?.toMap()
-          } as dynamic)) as Map;
+            'coord': coord.toMap(),
+            'lineStart': lineStart.toMap(),
+            'lineEnd': lineEnd.toMap()
+          } as dynamic)) as Map?;
 
-      result = BMFCoordinate.fromMap(map['result']);
+      result = BMFCoordinate.fromMap(map?['result']);
     } on PlatformException catch (e) {
       print(e.toString());
     }

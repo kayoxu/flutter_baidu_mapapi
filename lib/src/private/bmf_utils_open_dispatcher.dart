@@ -30,7 +30,7 @@ class BMFUtilsOpenDispatcher {
     try {
       Map map = (await _openChannel.invokeMethod(
           BMFOpenMethodID.kOpenBaiduMapNavi,
-          {'naviOption': naviOption?.toMap()} as dynamic)) as Map;
+          {'naviOption': naviOption.toMap()} as dynamic)) as Map;
       result = BMFOpenErrorCode.values[map['result'] as int];
     } on PlatformException catch (e) {
       print(e.toString());
@@ -48,7 +48,7 @@ class BMFUtilsOpenDispatcher {
     try {
       Map map = (await _openChannel.invokeMethod(
           BMFOpenMethodID.kOpenBaiduMapRoute,
-          {'routeOption': routeOption?.toMap()} as dynamic)) as Map;
+          {'routeOption': routeOption.toMap()} as dynamic)) as Map;
       result = BMFOpenErrorCode.values[map['result'] as int];
     } on PlatformException catch (e) {
       print(e.toString());
@@ -67,7 +67,7 @@ class BMFUtilsOpenDispatcher {
     try {
       Map map = (await _openChannel.invokeMethod(
           BMFOpenMethodID.kOpenBaiduMapPoiDetail,
-          {'poiDetailOption': poiDetailOption?.toMap()} as dynamic)) as Map;
+          {'poiDetailOption': poiDetailOption.toMap()} as dynamic)) as Map;
       result = BMFOpenErrorCode.values[map['result'] as int];
     } on PlatformException catch (e) {
       print(e.toString());
@@ -85,7 +85,7 @@ class BMFUtilsOpenDispatcher {
     try {
       Map map = (await _openChannel.invokeMethod(
           BMFOpenMethodID.kOpenBaiduMapPoiNear,
-          {'poiNearOption': poiNearOption?.toMap()} as dynamic)) as Map;
+          {'poiNearOption': poiNearOption.toMap()} as dynamic)) as Map;
       result = BMFOpenErrorCode.values[map['result'] as int];
     } on PlatformException catch (e) {
       print(e.toString());
@@ -103,7 +103,7 @@ class BMFUtilsOpenDispatcher {
     try {
       Map map = (await _openChannel.invokeMethod(
           BMFOpenMethodID.kOpenBaiduMapPanorama,
-          {'panoramaOption': panoramaOption?.toMap()} as dynamic)) as Map;
+          {'panoramaOption': panoramaOption.toMap()} as dynamic)) as Map;
       result = BMFOpenErrorCode.values[map['result'] as int];
     } on PlatformException catch (e) {
       print(e.toString());
