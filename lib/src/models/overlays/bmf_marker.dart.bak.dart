@@ -269,7 +269,7 @@ class BMFMarker extends BMFOverlay {
       'screenPointToLock': this.screenPointToLock?.toMap(),
       'identifier': this.identifier,
       'icon': this.icon,
-      'icons': this.icons?.map((e) => e)?.toList(),
+      'icons': this.icons?.map((e) => e).toList(),
       'centerOffset': this.centerOffset?.toMap(),
       'enabled3D': this.enabled3D,
       'enabled': this.enabled,

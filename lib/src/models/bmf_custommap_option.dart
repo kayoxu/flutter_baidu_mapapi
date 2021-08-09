@@ -19,10 +19,10 @@ class BMFCustomMapStyleOption implements BMFModel {
   }) : assert(customMapStyleID != null);
 
   /// map => BMFCustomMapStyleOption
-  BMFCustomMapStyleOption.fromMap(Map map)
+  BMFCustomMapStyleOption.fromMap(Map? map)
       : assert(map != null,
             'Construct a BMFCustomMapStyleOption，The parameter map cannot be null') {
-    customMapStyleID = map['customMapStyleID'];
+    customMapStyleID = map!['customMapStyleID'];
     customMapStyleFilePath = map['customMapStyleFilePath'];
   }
   @override

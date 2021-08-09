@@ -327,7 +327,7 @@ class BMFMapGetStateDispatcher {
     }
     BMFPoint? mapScaleBarPosition;
     try {
-      Map result = await _mapChannel.invokeMethod(
+      Map? result = await _mapChannel.invokeMethod(
           BMFMapGetPropertyMethodId.kMapGetMapScaleBarPositionMethod);
       if (null == result) {
         return null;
