@@ -1,5 +1,5 @@
-name: flutter_baidu_mapapi_base
-description: The flutter_baidu_mapapi_base plugin offer public flutter and native(include Android and iOS) lib for other components.
+name: flutter_baidu_mapapi_map
+description: The flutter_baidu_mapapi_map is a flutter plugin of basic map for baidu map, You can use it to develop map page for Flutter application.
 version: 2.0.1
 # author: Baidu Map SDK team
 #homepage: https://lbsyun.baidu.com/index.php?title=flutter/loc
@@ -13,6 +13,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_plugin_android_lifecycle: ^2.0.0
+  flutter_baidu_mapapi_base:
+    git:
+      url: https://gitee.com/kayoxu/flutter_baidu_mapapi.git
+      ref: 'base'
+
 
 dev_dependencies:
   flutter_test:
@@ -30,11 +36,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.baidu.mapapi.base
-        pluginClass: FlutterBmfbasePlugin
+        package: com.baidu.bmfmap
+        pluginClass: FlutterBmfmapPlugin
       ios:
-        pluginClass: FlutterBmfbasePlugin
-
+        pluginClass: FlutterBmfmapPlugin
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg
@@ -45,7 +50,6 @@ flutter:
   #
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # To add custom fonts to your plugin package, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a

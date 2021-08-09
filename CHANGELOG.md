@@ -1,5 +1,6 @@
 ## 1.0.0
-百度地图flutter_bmfbase组件初始发布
+
+* TODO: Describe initial release.
 
 ## 1.0.1
 提升版本号
@@ -7,9 +8,10 @@
 ## 1.0.2
 解决了与其它Flutter插件冲突的问题
 
+
 ## 2.0.0
 新增功能：  
-   1、新增检索组件；   
+   1、新增检索组件；  
    2、Circle、Polygon增加镂空效果；  
    3、Circle、Polygon、Arcline、Dot、Ground、Text支持属性更新。  
 问题修复：  

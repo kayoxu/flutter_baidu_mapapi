@@ -63,12 +63,28 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_baidu_mapapi_base:
-    dependency: "direct dev"
+    dependency: transitive
+    description:
+      path: "."
+      ref: base
+      resolved-ref: "3a63254d3536b5732e6be7d932a9a70331a46e4c"
+      url: "https://gitee.com/kayoxu/flutter_baidu_mapapi.git"
+    source: git
+    version: "2.0.1"
+  flutter_baidu_mapapi_map:
+    dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
     version: "2.0.1"
+  flutter_plugin_android_lifecycle:
+    dependency: transitive
+    description:
+      name: flutter_plugin_android_lifecycle
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "2.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter

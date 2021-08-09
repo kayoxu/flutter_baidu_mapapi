@@ -1,6 +1,5 @@
 // import 'dart:io' show Platform;
 // import 'package:flutter/material.dart';
-// import 'package:flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.dart';
 //
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
@@ -14,8 +13,7 @@
 //     // 请在主工程的Manifest文件里设置，详细配置方法请参考官网(https://lbsyun.baidu.com/)demo
 //     BMFMapSDK.setCoordType(BMF_COORD_TYPE.BD09LL);
 //   }
-//
-//   Map map = await BMFMapAPI_Base.nativeBaseVersion;
+//   Map map = await BMFMapAPI_Map.nativeMapVersion;
 //   print('获取原生地图版本号：$map');
 //   runApp(new MyApp());
 // }
@@ -26,25 +24,20 @@
 // }
 //
 // class _MyAppState extends State<MyApp> {
-//   // String _platformVersion = 'Unknown';
-//
 //   @override
 //   void initState() {
 //     super.initState();
-//     // initPlatformState();
 //   }
 //
 //   @override
 //   Widget build(BuildContext context) {
 //     return MaterialApp(
 //       home: Scaffold(
-//         appBar: AppBar(
-//           title: const Text('Plugin example app'),
-//         ),
-//         body: Center(
-//           child: Text('flutter_baidu_mapapi_base \n'),
-//         ),
-//       ),
+//           appBar: BMFAppBar(
+//             title: '百度地图flutter插件Demo',
+//             isBack: false,
+//           ),
+//           body: FlutterBMFMapDemo()),
 //     );
 //   }
 // }
