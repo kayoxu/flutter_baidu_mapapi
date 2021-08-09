@@ -1,6 +1,6 @@
 # This file is used by dartdoc when generating API documentation for Flutter.
 dartdoc:
-  include: ['flutter_baidu_mapapi_search']
+  include: ['flutter_baidu_mapapi_utils']
 
   # linkToSource:
   #   root: '.'

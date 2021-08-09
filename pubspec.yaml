@@ -1,5 +1,5 @@
-name: flutter_baidu_mapapi_search
-description: By calling the flutter_baidu_mapapi_search interface, you can easily access baidu map services and data, and build map-based applications with rich functions and strong interactivity.
+name: flutter_baidu_mapapi_utils
+description: The flutter_bmfutils can be uesed to start baidu map client, Longitude and latitude convert, distance calculation between points,and so on.
 version: 2.0.1
 # author: Baidu Map SDK team
 homepage: https://lbsyun.baidu.com/index.php?title=flutter/loc
@@ -11,11 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # flutter_bmfbase: ^1.0.0
   flutter_baidu_mapapi_base:
     git:
       url: https://gitee.com/kayoxu/flutter_baidu_mapapi.git
       ref: 'base'
-
 
 dev_dependencies:
   flutter_test:
@@ -33,10 +33,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.baidu.mapapi.search
-        pluginClass: FlutterBmfsearchPlugin
+        package: com.baidu.mapapi.utils
+        pluginClass: FlutterBmfUtilsPlugin
       ios:
-        pluginClass: FlutterBmfsearchPlugin
+        pluginClass: FlutterBmfUtilsPlugin
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

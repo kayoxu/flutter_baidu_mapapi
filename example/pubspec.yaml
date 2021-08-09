@@ -1,5 +1,5 @@
-name: flutter_bmfsearch_example
-description: Demonstrates how to use the flutter_bmfsearch plugin.
+name: flutter_bmfutils_example
+description: Demonstrates how to use the flutter_bmfutils plugin.
 publish_to: 'none'
 version: 0.0.1
 
@@ -10,9 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  flutter_baidu_mapapi_search:
+  flutter_baidu_mapapi_utils:
     path: ../
+  # flutter_bmfbase: ^1.0.0
+  # flutter_bmfutils:
+  #   path: ../flutter_bmfutils/
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

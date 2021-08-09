@@ -1,8 +1,8 @@
-# flutter_baidu_mapapi_search
+# flutter_baidu_mapapi_utils
 
-百度地图Flutter插件检索库组件
+百度地图Flutter插件计算工具库组件
 
 ## Getting Started
 
-检索库组件提供了POI检索、公交检索、街区检索、短串分享、推荐上车点、天气、路径规划等功能；  
+计算工具库组件提供了打开百度地图客户端、距离计算、面积计算、空间关系判断等功能；  
 详细的接入请参考[百度地图Flutter插件官方文档](https://lbsyun.baidu.com/index.php?title=flutter/loc)

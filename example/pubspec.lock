@@ -71,7 +71,7 @@ packages:
       url: "https://gitee.com/kayoxu/flutter_baidu_mapapi.git"
     source: git
     version: "2.0.1"
-  flutter_baidu_mapapi_search:
+  flutter_baidu_mapapi_utils:
     dependency: "direct main"
     description:
       path: ".."

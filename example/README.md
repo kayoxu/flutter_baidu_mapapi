@@ -1,6 +1,6 @@
-# flutter_bmfsearch_example
+# flutter_bmfutils_example
 
-Demonstrates how to use the flutter_bmfsearch plugin.
+Demonstrates how to use the flutter_bmfutils plugin.
 
 ## Getting Started
 
