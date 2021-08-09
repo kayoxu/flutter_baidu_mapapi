@@ -1,10 +1,8 @@
-name: flutter_baidu_mapapi_base
-description: The flutter_baidu_mapapi_base plugin offer public flutter and native(include Android and iOS) lib for other components.
+name: flutter_baidu_mapapi_search
+description: By calling the flutter_baidu_mapapi_search interface, you can easily access baidu map services and data, and build map-based applications with rich functions and strong interactivity.
 version: 2.0.1
 # author: Baidu Map SDK team
-#homepage: https://lbsyun.baidu.com/index.php?title=flutter/loc
-publish_to: 'none'
-
+homepage: https://lbsyun.baidu.com/index.php?title=flutter/loc
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
@@ -13,6 +11,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_baidu_mapapi_base:
+    git:
+      url: https://gitee.com/kayoxu/flutter_baidu_mapapi.git
+      ref: 'base'
+
 
 dev_dependencies:
   flutter_test:
@@ -30,11 +33,10 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.baidu.mapapi.base
-        pluginClass: FlutterBmfbasePlugin
+        package: com.baidu.mapapi.search
+        pluginClass: FlutterBmfsearchPlugin
       ios:
-        pluginClass: FlutterBmfbasePlugin
-
+        pluginClass: FlutterBmfsearchPlugin
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

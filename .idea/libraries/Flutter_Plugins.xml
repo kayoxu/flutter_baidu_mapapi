@@ -2,6 +2,7 @@
   <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
     <CLASSES>
       <root url="file://$PROJECT_DIR$" />
+      <root url="file://$USER_HOME$/fvm/versions/stable/.pub-cache/git/flutter_baidu_mapapi-3a63254d3536b5732e6be7d932a9a70331a46e4c" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

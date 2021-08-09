@@ -1,6 +1,6 @@
-# flutter_bmfbase_example
+# flutter_bmfsearch_example
 
-Demonstrates how to use the flutter_bmfbase plugin.
+Demonstrates how to use the flutter_bmfsearch plugin.
 
 ## Getting Started
 

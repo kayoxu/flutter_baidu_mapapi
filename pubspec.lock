@@ -55,6 +55,15 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_baidu_mapapi_base:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: base
+      resolved-ref: "3a63254d3536b5732e6be7d932a9a70331a46e4c"
+      url: "https://gitee.com/kayoxu/flutter_baidu_mapapi.git"
+    source: git
+    version: "2.0.1"
   flutter_test:
     dependency: "direct dev"
     description: flutter

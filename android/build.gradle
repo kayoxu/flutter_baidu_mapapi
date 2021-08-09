@@ -1,4 +1,4 @@
-group 'com.baidu.mapapi.base'
+group 'com.baidu.flutter_bmfsearch'
 version '1.0'
 
 buildscript {
@@ -16,7 +16,6 @@ rootProject.allprojects {
     repositories {
         google()
         jcenter()
-        mavenLocal()
     }
 }
 
@@ -32,14 +31,10 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
-
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['jniLibs']
-        }
-    }
 }
 
 dependencies {
-    api fileTree(include: ['*.jar'], dir: 'libs')
+    implementation fileTree(includes: ['*.jar'], dir: 'libs')
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation rootProject.findProject(":flutter_baidu_mapapi_base")
 }
