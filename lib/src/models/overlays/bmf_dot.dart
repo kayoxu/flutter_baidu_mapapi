@@ -68,7 +68,7 @@ class BMFDot extends BMFOverlay {
 
     bool? ret = await BMFMapDispatcherFactory.instance.overlayDispatcher
         .updateDotMember(this.methodChannel,
-            {'id': this.Id, 'member': 'center', 'value': center?.toMap()});
+            {'id': this.Id, 'member': 'center', 'value': center.toMap()});
 
     if (ret == true) {
       this.center = center;

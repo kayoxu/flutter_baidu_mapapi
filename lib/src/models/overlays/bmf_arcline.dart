@@ -79,7 +79,7 @@ class BMFArcLine extends BMFOverlay {
         .updateArclineMember(this.methodChannel, {
       'id': this.Id,
       'member': 'coordinates',
-      'value': coordinates?.map((coordinate) => coordinate?.toMap())?.toList()
+      'value': coordinates.map((coordinate) => coordinate.toMap()).toList()
     });
 
     if (ret == true) {
@@ -116,7 +116,7 @@ class BMFArcLine extends BMFOverlay {
         .updateArclineMember(this.methodChannel, {
       'id': this.Id,
       'member': 'color',
-      'value': color?.value?.toRadixString(16)
+      'value': color.value.toRadixString(16)
     });
 
     if (ret == true) {

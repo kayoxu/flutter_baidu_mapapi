@@ -384,7 +384,7 @@ class BMFMapStatusDispatcher {
           BMFMapStateMethodId.kMapSetVisibleMapBoundsWithPaddingMethod,
           {
             'visibleMapBounds': visibleMapBounds.toMap(),
-            'insets': BMFEdgeInsets.fromEdgeInsets(insets)?.toMap(),
+            'insets': BMFEdgeInsets.fromEdgeInsets(insets).toMap(),
             'animated': animated
           } as dynamic)) as bool;
     } on PlatformException catch (e) {

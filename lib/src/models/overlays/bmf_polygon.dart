@@ -74,12 +74,12 @@ class BMFPolygon extends BMFOverlay {
   Map<String, Object?> toMap() {
     return {
       'id': this.Id,
-      'coordinates': this.coordinates?.map((coord) => coord?.toMap())?.toList(),
+      'coordinates': this.coordinates?.map((coord) => coord.toMap()).toList(),
       'width': this.width,
-      'strokeColor': this.strokeColor?.value?.toRadixString(16),
-      'fillColor': this.fillColor?.value?.toRadixString(16),
+      'strokeColor': this.strokeColor?.value.toRadixString(16),
+      'fillColor': this.fillColor?.value.toRadixString(16),
       'lineDashType': this.lineDashType?.index,
-      'hollowShapes': this.hollowShapes?.map((e) => e?.toMap())?.toList(),
+      'hollowShapes': this.hollowShapes?.map((e) => e.toMap()).toList(),
       'zIndex': this.zIndex,
       'visible': this.visible
     };
@@ -97,7 +97,7 @@ class BMFPolygon extends BMFOverlay {
         .updatePolygonMember(this.methodChannel, {
       'id': this.Id,
       'member': 'coordinates',
-      'value': coordinates?.map((coordinate) => coordinate?.toMap())?.toList()
+      'value': coordinates.map((coordinate) => coordinate.toMap()).toList()
     });
 
     if (ret == true) {
@@ -134,7 +134,7 @@ class BMFPolygon extends BMFOverlay {
         .updatePolygonMember(this.methodChannel, {
       'id': this.Id,
       'member': 'strokeColor',
-      'value': strokeColor?.value?.toRadixString(16)
+      'value': strokeColor.value.toRadixString(16)
     });
 
     if (ret == true) {
@@ -154,7 +154,7 @@ class BMFPolygon extends BMFOverlay {
         .updatePolygonMember(this.methodChannel, {
       'id': this.Id,
       'member': 'fillColor',
-      'value': fillColor?.value?.toRadixString(16)
+      'value': fillColor.value.toRadixString(16)
     });
 
     if (ret == true) {
@@ -198,7 +198,7 @@ class BMFPolygon extends BMFOverlay {
         .updatePolygonMember(this.methodChannel, {
       'id': this.Id,
       'member': 'hollowShapes',
-      'value': hollowShapes?.map((e) => e?.toMap())?.toList()
+      'value': hollowShapes.map((e) => e.toMap()).toList()
     });
 
     if (ret == true) {

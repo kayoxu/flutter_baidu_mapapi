@@ -150,11 +150,11 @@ class BMFPolyline extends BMFOverlay {
   Map<String, Object?> toMap() {
     return {
       'id': this.Id,
-      'coordinates': this.coordinates?.map((coord) => coord?.toMap())?.toList(),
-      'indexs': this.indexs?.map((index) => index)?.toList(),
+      'coordinates': this.coordinates?.map((coord) => coord.toMap()).toList(),
+      'indexs': this.indexs?.map((index) => index).toList(),
       'width': this.width,
       'colors':
-          this.colors?.map((color) => color.value.toRadixString(16))?.toList(),
+          this.colors?.map((color) => color.value.toRadixString(16)).toList(),
       'textures': this.textures,
       'dottedLine': this.dottedLine,
       'lineDashType': this.lineDashType?.index,
@@ -185,8 +185,8 @@ class BMFPolyline extends BMFOverlay {
         .updatePolylineMember(this.methodChannel, {
       'id': this.Id,
       'member': 'coordinates',
-      'value': coordinates?.map((coordinate) => coordinate?.toMap())?.toList(),
-      'indexs': indexs?.map((index) => index)?.toList()
+      'value': coordinates.map((coordinate) => coordinate.toMap()).toList(),
+      'indexs': indexs?.map((index) => index).toList()
     });
 
     if (ret == true) {
@@ -225,7 +225,7 @@ class BMFPolyline extends BMFOverlay {
         .updatePolylineMember(this.methodChannel, {
       'id': this.Id,
       'member': 'indexs',
-      'value': indexs?.map((index) => index)?.toList()
+      'value': indexs.map((index) => index).toList()
     });
 
     if (ret == true) {
@@ -247,8 +247,8 @@ class BMFPolyline extends BMFOverlay {
         .updatePolylineMember(this.methodChannel, {
       'id': this.Id,
       'member': 'colors',
-      'value': colors?.map((color) => color.value.toRadixString(16))?.toList(),
-      'indexs': indexs?.map((index) => index)?.toList()
+      'value': colors.map((color) => color.value.toRadixString(16)).toList(),
+      'indexs': indexs?.map((index) => index).toList()
     });
 
     if (ret == true) {
@@ -272,7 +272,7 @@ class BMFPolyline extends BMFOverlay {
         .updatePolylineMember(this.methodChannel, {
       'id': this.Id,
       'member': 'textures',
-      'value': textures?.map((e) => e)?.toList()
+      'value': textures.map((e) => e).toList()
     });
 
     if (ret == true) {

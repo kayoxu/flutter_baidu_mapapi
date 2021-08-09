@@ -106,7 +106,7 @@ class BMFGround extends BMFOverlay {
 
     bool? ret = await BMFMapDispatcherFactory.instance.overlayDispatcher
         .updateGroundMember(this.methodChannel,
-            {'id': this.Id, 'member': 'position', 'value': position?.toMap()});
+            {'id': this.Id, 'member': 'position', 'value': position.toMap()});
 
     if (ret == true) {
       this.position = position;
@@ -180,7 +180,7 @@ class BMFGround extends BMFOverlay {
 
     bool? ret = await BMFMapDispatcherFactory.instance.overlayDispatcher
         .updateGroundMember(this.methodChannel,
-            {'id': this.Id, 'member': 'bounds', 'value': bounds?.toMap()});
+            {'id': this.Id, 'member': 'bounds', 'value': bounds.toMap()});
 
     if (ret == true) {
       this.bounds = bounds;

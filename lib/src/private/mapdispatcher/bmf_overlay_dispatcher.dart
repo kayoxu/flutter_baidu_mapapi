@@ -97,7 +97,7 @@ class BMFOverlayDispatcher {
     bool? result = false;
     try {
       result = (await _mapChannel.invokeMethod(
-              BMFOverlayMethodId.kMapAddDotMethod, dot?.toMap() as dynamic))
+              BMFOverlayMethodId.kMapAddDotMethod, dot.toMap() as dynamic))
           as bool;
     } on PlatformException catch (e) {
       print(e.toString());
@@ -148,7 +148,7 @@ class BMFOverlayDispatcher {
     bool? result = false;
     try {
       result = (await _mapChannel.invokeMethod(
-              BMFOverlayMethodId.kMapAddTileMethod, tile?.toMap() as dynamic))
+              BMFOverlayMethodId.kMapAddTileMethod, tile.toMap() as dynamic))
           as bool;
     } on PlatformException catch (e) {
       BMFLog.e(e.toString(), tag: _tag);

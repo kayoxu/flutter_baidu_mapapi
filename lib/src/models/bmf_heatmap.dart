@@ -30,8 +30,8 @@ class BMFHeatMap implements BMFModel {
     return {
       'data': this
           .data
-          ?.map((weightedCoordinate) => weightedCoordinate?.toMap())
-          ?.toList(),
+          ?.map((weightedCoordinate) => weightedCoordinate.toMap())
+          .toList(),
       'radius': this.radius,
       'opacity': this.opacity,
       'gradient': this.gradient?.toMap()
@@ -135,8 +135,8 @@ class BMFGradient implements BMFModel {
   Map<String, Object?> toMap() {
     return {
       'colors':
-          this.colors?.map((color) => color.value.toRadixString(16))?.toList(),
-      'startPoints': this.startPoints?.map((p) => p)?.toList()
+          this.colors?.map((color) => color.value.toRadixString(16)).toList(),
+      'startPoints': this.startPoints?.map((p) => p).toList()
     };
   }
 }

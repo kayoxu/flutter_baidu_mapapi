@@ -344,7 +344,7 @@ class BMFMarker extends BMFOverlay {
         .updateMarkerMember(this.methodChannel, {
       'id': this.Id,
       'member': 'position',
-      'value': position?.toMap(),
+      'value': position.toMap(),
     });
 
     if (ret == true) {
@@ -364,7 +364,7 @@ class BMFMarker extends BMFOverlay {
       'id': this.Id,
       'member': 'isLockedToScreen',
       'value': isLockedToScreen,
-      'screenPointToLock': screenPointToLock?.toMap()
+      'screenPointToLock': screenPointToLock.toMap()
     });
 
     if (ret == true) {
@@ -405,7 +405,7 @@ class BMFMarker extends BMFOverlay {
         .updateMarkerMember(this.methodChannel, {
       'id': this.Id,
       'member': 'centerOffset',
-      'value': centerOffset?.toMap(),
+      'value': centerOffset.toMap(),
     });
 
     if (ret == true) {

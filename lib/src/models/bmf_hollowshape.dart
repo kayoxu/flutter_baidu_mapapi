@@ -72,7 +72,7 @@ class BMFHollowShape implements BMFModel {
   Map<String, Object?> toMap() {
     return {
       'hollowShapeType': this.hollowShapeType?.index,
-      'coordinates': this.coordinates?.map((e) => e?.toMap())?.toList(),
+      'coordinates': this.coordinates?.map((e) => e.toMap()).toList(),
       'center': this.center?.toMap(),
       'radius': this.radius
     };

@@ -158,9 +158,9 @@ class BMFOfflineMapDispatcher {
       if (null == map) {
         return null;
       }
-      List list = map["searchCityRecord"] as List;
+      List? list = map["searchCityRecord"] as List?;
       result =
-          list?.map((city) => BMFOfflineCityRecord.fromMap(city))?.toList();
+          list?.map((city) => BMFOfflineCityRecord.fromMap(city)).toList();
     } on PlatformException catch (e) {
       print(e.toString());
     }
@@ -180,9 +180,9 @@ class BMFOfflineMapDispatcher {
       if (null == map) {
         return null;
       }
-      List? list = map["updateElements"] as List;
+      List? list = map["updateElements"] as List?;
       result =
-          list?.map((element) => BMFUpdateElement.fromMap(element))?.toList();
+          list?.map((element) => BMFUpdateElement.fromMap(element)).toList();
     } on PlatformException catch (e) {
       print(e.toString());
     }

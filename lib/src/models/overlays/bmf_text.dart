@@ -82,8 +82,8 @@ class BMFText extends BMFOverlay {
       'id': this.Id,
       'text': this.text,
       'position': this.position?.toMap(),
-      "bgColor": this.bgColor?.value?.toRadixString(16),
-      "fontColor": this.fontColor?.value?.toRadixString(16),
+      "bgColor": this.bgColor?.value.toRadixString(16),
+      "fontColor": this.fontColor?.value.toRadixString(16),
       "fontSize": this.fontSize,
       "typeFace": this.typeFace?.toMap(),
       "alignX": this.alignX,
@@ -123,7 +123,7 @@ class BMFText extends BMFOverlay {
 
     bool? ret = await BMFMapDispatcherFactory.instance.overlayDispatcher
         .updateTextMember(this.methodChannel,
-            {'id': this.Id, 'member': 'position', 'value': position?.toMap()});
+            {'id': this.Id, 'member': 'position', 'value': position.toMap()});
 
     if (ret == true) {
       this.position = position;
@@ -144,7 +144,7 @@ class BMFText extends BMFOverlay {
         .updateTextMember(this.methodChannel, {
       'id': this.Id,
       'member': 'bgColor',
-      'value': bgColor?.value?.toRadixString(16)
+      'value': bgColor.value.toRadixString(16)
     });
 
     if (ret == true) {
@@ -166,7 +166,7 @@ class BMFText extends BMFOverlay {
         .updateTextMember(this.methodChannel, {
       'id': this.Id,
       'member': 'fontColor',
-      'value': fontColor?.value?.toRadixString(16)
+      'value': fontColor.value.toRadixString(16)
     });
 
     if (ret == true) {
@@ -186,7 +186,7 @@ class BMFText extends BMFOverlay {
 
     bool? ret = await BMFMapDispatcherFactory.instance.overlayDispatcher
         .updateTextMember(this.methodChannel,
-            {'id': this.Id, 'member': 'typeFace', 'value': typeFace?.toMap()});
+            {'id': this.Id, 'member': 'typeFace', 'value': typeFace.toMap()});
 
     if (ret == true) {
       this.typeFace = typeFace;

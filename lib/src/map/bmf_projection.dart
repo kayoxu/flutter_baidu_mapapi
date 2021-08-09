@@ -31,7 +31,7 @@ class BMFProjection {
     try {
       Map map = (await _mapChannel?.invokeMethod(
           BMFProjectionMethodId.kCoordinateFromScreenPointMethod,
-          {'point': point?.toMap()} as dynamic)) as Map;
+          {'point': point.toMap()} as dynamic)) as Map;
       result = BMFCoordinate.fromMap(map['coordinate']);
     } on PlatformException catch (e) {
       BMFLog.e(e.toString());
@@ -59,7 +59,7 @@ class BMFProjection {
     try {
       Map map = ((await _mapChannel?.invokeMethod(
           BMFProjectionMethodId.kScreenPointFromCoordinateMethod,
-          {'coordinate': location?.toMap()} as dynamic))) as Map;
+          {'coordinate': location.toMap()} as dynamic))) as Map;
       point = BMFPoint.fromMap(map['point']);
     } on PlatformException catch (e) {
       BMFLog.e(e.toString());

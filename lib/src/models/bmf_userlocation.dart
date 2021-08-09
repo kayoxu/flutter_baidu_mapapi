@@ -41,7 +41,7 @@ class BMFUserLocation implements BMFModel {
             'Construct a BMFUserLocation，The parameter map cannot be null') {
     updating = map!['updating'];
     location =
-        map!['location'] == null ? null : BMFLocation.fromMap(map['location']);
+        map['location'] == null ? null : BMFLocation.fromMap(map['location']);
     heading =
         map['heading'] == null ? null : BMFHeading.fromMap(map['heading']);
     title = map['title'];
@@ -206,7 +206,7 @@ class BMFHeading implements BMFModel {
     magneticHeading = map!['magneticHeading'];
     trueHeading = map['trueHeading'];
     headingAccuracy = map['headingAccuracy'];
-    x = map!['x'];
+    x = map['x'];
     y = map['y'];
     z = map['z'];
     timestamp = map['timestamp'];
@@ -349,9 +349,9 @@ class BMFUserLocationDisplayParam implements BMFModel {
       'enableDirection': this.enableDirection,
       'isAccuracyCircleShow': this.isAccuracyCircleShow,
       'accuracyCircleFillColor':
-          this.accuracyCircleFillColor?.value?.toRadixString(16),
+          this.accuracyCircleFillColor?.value.toRadixString(16),
       'accuracyCircleStrokeColor':
-          this.accuracyCircleStrokeColor?.value?.toRadixString(16),
+          this.accuracyCircleStrokeColor?.value.toRadixString(16),
       'isRotateAngleValid': this.isRotateAngleValid,
       'locationViewImage': this.locationViewImage,
       'canShowCallOut': this.canShowCallOut,

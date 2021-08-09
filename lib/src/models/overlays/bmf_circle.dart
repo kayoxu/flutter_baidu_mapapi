@@ -91,7 +91,7 @@ class BMFCircle extends BMFOverlay {
       'fillColor': this.fillColor?.value.toRadixString(16),
       'lineDashType': this.lineDashType?.index,
       'dottedLine': this.dottedLine,
-      'hollowShapes': this.hollowShapes?.map((e) => e?.toMap())?.toList(),
+      'hollowShapes': this.hollowShapes?.map((e) => e.toMap()).toList(),
       'zIndex': this.zIndex,
       'visible': this.visible
     };
@@ -107,7 +107,7 @@ class BMFCircle extends BMFOverlay {
 
     bool? ret = await BMFMapDispatcherFactory.instance.overlayDispatcher
         .updateCircleMember(this.methodChannel,
-            {'id': this.Id, 'member': 'center', 'value': center?.toMap()});
+            {'id': this.Id, 'member': 'center', 'value': center.toMap()});
 
     if (ret == true) {
       this.center = center;
@@ -243,7 +243,7 @@ class BMFCircle extends BMFOverlay {
         .updateCircleMember(this.methodChannel, {
       'id': this.Id,
       'member': 'hollowShapes',
-      'value': hollowShapes?.map((e) => e?.toMap())?.toList()
+      'value': hollowShapes.map((e) => e.toMap()).toList()
     });
 
     if (ret == true) {

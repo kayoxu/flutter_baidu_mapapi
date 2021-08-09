@@ -40,7 +40,7 @@ class BMFMarkerDispatcher {
     try {
       result = (await _mapChannel.invokeMethod(
               BMFMarkerMethodId.kMapAddMarkersMethod,
-              markers?.map((marker) => marker.toMap())?.toList() as dynamic))
+              markers.map((marker) => marker.toMap()).toList() as dynamic))
           as bool;
     } on PlatformException catch (e) {
       print(e.toString());
@@ -133,7 +133,7 @@ class BMFMarkerDispatcher {
     try {
       result = (await _mapChannel.invokeMethod(
               BMFMarkerMethodId.kMapRemoveMarkersMethod,
-              markers?.map((marker) => marker.toMap())?.toList() as dynamic))
+              markers.map((marker) => marker.toMap()).toList() as dynamic))
           as bool;
     } on PlatformException catch (e) {
       print(e.toString());
@@ -166,7 +166,7 @@ class BMFMarkerDispatcher {
     bool? result = false;
     try {
       result = (await _mapChannel.invokeMethod(
-          BMFMarkerMethodId.kMapSelectMarkerMethod, marker?.toMap())) as bool;
+          BMFMarkerMethodId.kMapSelectMarkerMethod, marker.toMap())) as bool?;
     } on PlatformException catch (e) {
       print(e.toString());
     }
@@ -184,7 +184,7 @@ class BMFMarkerDispatcher {
     bool? result = false;
     try {
       result = (await _mapChannel.invokeMethod(
-          BMFMarkerMethodId.kMapDeselectMarkerMethod, marker?.toMap())) as bool;
+          BMFMarkerMethodId.kMapDeselectMarkerMethod, marker.toMap())) as bool?;
     } on PlatformException catch (e) {
       print(e.toString());
     }

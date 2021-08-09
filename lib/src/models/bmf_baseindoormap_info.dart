@@ -39,7 +39,7 @@ class BMFBaseIndoorMapInfo implements BMFModel {
     return {
       'strID': this.strID,
       'strFloor': this.strFloor,
-      'listStrFloors': this.listStrFloors?.map((s) => s?.toString())?.toList()
+      'listStrFloors': this.listStrFloors?.map((s) => s.toString()).toList()
     };
   }
 }

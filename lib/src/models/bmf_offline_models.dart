@@ -50,7 +50,7 @@ class BMFOfflineCityRecord implements BMFModel {
       'dataSize': this.dataSize,
       'cityName': this.cityName,
       'cityType': this.cityType,
-      'childCities': this.childCities?.map((city) => city?.toMap())?.toList()
+      'childCities': this.childCities?.map((city) => city.toMap()).toList()
     };
   }
 
