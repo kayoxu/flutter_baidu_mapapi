@@ -11,7 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol BMFSearchHandle <NSObject>
 
-required
+@required
 
 /// channel
 @property (nonatomic, weak) FlutterMethodChannel *_channel;
