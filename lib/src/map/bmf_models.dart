@@ -176,7 +176,7 @@ class BMFCoordinateSpan implements BMFModel {
         assert(map!.containsKey('longitudeDelta'),
             'Construct a BMFCoordinateSpan，The parameter longitudeDelta cannot be null') {
     latitudeDelta = map!['latitudeDelta '] as double;
-    longitudeDelta = map!['longitudeDelta'] as double;
+    longitudeDelta = map['longitudeDelta'] as double;
   }
 
   /// 经纬度范围 -> map
@@ -219,7 +219,7 @@ class BMFCoordinateRegion implements BMFModel {
         assert(map!.containsKey('span'),
             'Construct a BMFCoordinateRegion，The parameter span cannot be null') {
     center = BMFCoordinate.fromMap(map!['center']);
-    span = BMFCoordinateSpan.fromMap(map!['span']);
+    span = BMFCoordinateSpan.fromMap(map['span']);
   }
 
   /// 经纬度区域 -> map
