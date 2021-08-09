@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 abstract class BMFModel {
   /// model -> map
   @required
-  Map<String, Object> toMap();
+  Map<String, Object?> toMap();
 
   /// map -> dynamic
   @required
