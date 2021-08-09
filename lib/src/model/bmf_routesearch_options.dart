@@ -114,7 +114,7 @@ class BMFDrivingRoutePlanOption extends BMFBaseRoutePlanOption
     return {
       'from': this.from?.toMap(),
       'to': this.to?.toMap(),
-      'wayPointsArray': this.wayPointsArray?.map((e) => e?.toMap())?.toList(),
+      'wayPointsArray': this.wayPointsArray?.map((e) => e.toMap()).toList(),
       'drivingPolicy': this.drivingPolicy?.index,
       'drivingRequestTrafficType': this.drivingRequestTrafficType?.index
     };

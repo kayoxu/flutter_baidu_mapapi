@@ -434,18 +434,18 @@ class BMFSuggestAddrInfo implements BMFModel {
   @override
   Map<String, Object?> toMap() {
     return {
-      'startPoiList': this.startPoiList?.map((e) => e?.toMap())?.toList(),
-      'startCityList': this.startCityList?.map((e) => e?.toMap())?.toList(),
-      'endPoiList': this.endPoiList?.map((e) => e?.toMap())?.toList(),
-      'endCityList': this.endCityList?.map((e) => e?.toMap())?.toList(),
+      'startPoiList': this.startPoiList?.map((e) => e.toMap()).toList(),
+      'startCityList': this.startCityList?.map((e) => e.toMap()).toList(),
+      'endPoiList': this.endPoiList?.map((e) => e.toMap()).toList(),
+      'endCityList': this.endCityList?.map((e) => e.toMap()).toList(),
       'wayPointPoiList': this
           .wayPointPoiList
-          ?.map((list) => list?.map((info) => info?.toMap())?.toList())
-          ?.toList(),
+          ?.map((list) => list.map((info) => info.toMap()).toList())
+          .toList(),
       'wayPointCityList': this
           .wayPointCityList
-          ?.map((list) => list?.map((cityInfo) => cityInfo?.toMap())?.toList())
-          ?.toList()
+          ?.map((list) => list.map((cityInfo) => cityInfo.toMap()).toList())
+          .toList()
     };
   }
 }

@@ -53,8 +53,8 @@ class BMFDistrictSearchResult implements BMFModel {
       'center': this.center?.toMap(),
       'paths': this
           .paths
-          ?.map((list) => list?.map((coord) => coord.toMap())?.toList())
-          ?.toList()
+          ?.map((list) => list.map((coord) => coord.toMap()).toList())
+          .toList()
     };
   }
 }

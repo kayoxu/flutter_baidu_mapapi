@@ -28,7 +28,7 @@ class BMFWeatherSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFWeatherSearchMethodID.kWeatherSearch,
           {
-            'weatherSearchOption': weatherSearchOption?.toMap(),
+            'weatherSearchOption': weatherSearchOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {

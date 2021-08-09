@@ -128,8 +128,8 @@ class BMFReverseGeoCodeSearchResult implements BMFModel {
       'businessCircle': this.businessCircle,
       'addressDetail': this.addressDetail?.toMap(),
       'confidence': this.confidence,
-      'poiList': this.poiList?.map((p) => p?.toMap())?.toList(),
-      'poiRegions': this.poiRegions?.map((p) => p?.toMap())?.toList(),
+      'poiList': this.poiList?.map((p) => p.toMap()).toList(),
+      'poiRegions': this.poiRegions?.map((p) => p.toMap()).toList(),
       'sematicDescription': this.sematicDescription
     };
   }

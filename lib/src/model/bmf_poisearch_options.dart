@@ -208,7 +208,7 @@ class BMFPoiCitySearchOption implements BMFModel {
   Map<String, Object?> toMap() {
     return {
       'keyword': this.keyword,
-      'tags': this.tags?.map((e) => e)?.toList(),
+      'tags': this.tags?.map((e) => e).toList(),
       'city': this.city,
       'isCityLimit': this.isCityLimit,
       'scope': this.scope?.index,
@@ -307,8 +307,8 @@ class BMFPoiNearbySearchOption implements BMFModel {
   @override
   Map<String, Object?> toMap() {
     return {
-      'keywords': this.keywords?.map((e) => e)?.toList(),
-      'tags': this.tags?.map((e) => e)?.toList(),
+      'keywords': this.keywords?.map((e) => e).toList(),
+      'tags': this.tags?.map((e) => e).toList(),
       'location': this.location?.toMap(),
       'radius': this.radius,
       'isRadiusLimit': this.isRadiusLimit,
@@ -400,8 +400,8 @@ class BMFPoiBoundSearchOption implements BMFModel {
   @override
   Map<String, Object?> toMap() {
     return {
-      'keywords': this.keywords?.map((e) => e)?.toList(),
-      'tags': this.tags?.map((e) => e)?.toList(),
+      'keywords': this.keywords?.map((e) => e).toList(),
+      'tags': this.tags?.map((e) => e).toList(),
       'leftBottom': this.leftBottom?.toMap(),
       'rightTop': this.rightTop?.toMap(),
       'scope': this.scope?.index,
@@ -446,7 +446,7 @@ class BMFPoiDetailSearchOption implements BMFModel {
   @override
   Map<String, Object?> toMap() {
     return {
-      'poiUIDs': this.poiUIDs?.map((e) => e)?.toList(),
+      'poiUIDs': this.poiUIDs?.map((e) => e).toList(),
       'scope': this.scope?.index,
     };
   }

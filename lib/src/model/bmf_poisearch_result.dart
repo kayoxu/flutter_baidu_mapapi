@@ -61,7 +61,7 @@ class BMFPoiSearchResult implements BMFModel {
       'curPageIndex': this.curPageIndex,
       'totalPOINum': this.totalPOINum,
       'curPOINum': this.curPOINum,
-      'poiInfoList': this.poiInfoList?.map((v) => v?.toMap())?.toList()
+      'poiInfoList': this.poiInfoList?.map((v) => v.toMap()).toList()
     };
   }
 }
@@ -99,7 +99,7 @@ class BMFPoiDetailSearchResult implements BMFModel {
   Map<String, Object?> toMap() {
     return {
       'totalPOINum': this.totalPOINum,
-      'poiInfoList': this.poiInfoList?.map((e) => e?.toMap())?.toList()
+      'poiInfoList': this.poiInfoList?.map((e) => e.toMap()).toList()
     };
   }
 }
@@ -159,7 +159,7 @@ class BMFPoiIndoorSearchResult implements BMFModel {
       'curPOINum': this.curPOINum,
       'curPageIndex': this.curPageIndex,
       'poiIndoorInfoList':
-          this.poiIndoorInfoList?.map((e) => e?.toMap())?.toList()
+          this.poiIndoorInfoList?.map((e) => e.toMap()).toList()
     };
   }
 }

@@ -90,8 +90,8 @@ class BMFBusLineResult implements BMFModel {
       'isMonTicket': this.isMonTicket,
       'basicPrice': this.basicPrice,
       'totalPrice': this.totalPrice,
-      'busStations': this.busStations?.map((e) => e?.toMap())?.toList(),
-      'busSteps': this.busSteps?.map((e) => e?.toMap())?.toList()
+      'busStations': this.busStations?.map((e) => e.toMap()).toList(),
+      'busSteps': this.busSteps?.map((e) => e.toMap()).toList()
     };
   }
 }

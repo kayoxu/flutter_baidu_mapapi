@@ -30,7 +30,7 @@ class BMFRecommendStopSearchResult implements BMFModel {
   Map<String, Object?> toMap() {
     return {
       'recommendStopInfoList':
-          this.recommendStopInfoList?.map((e) => e?.toMap())?.toList()
+          this.recommendStopInfoList?.map((e) => e.toMap()).toList()
     };
   }
 }

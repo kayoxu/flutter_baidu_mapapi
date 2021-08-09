@@ -109,7 +109,7 @@ class BMFTransitRouteLine extends BMFRouteLine implements BMFModel {
       'starting': this.starting?.toMap(),
       'terminal': this.terminal?.toMap(),
       'title': this.title,
-      'steps': this.steps?.map((e) => e?.toMap())?.toList()
+      'steps': this.steps?.map((e) => e.toMap()).toList()
     };
   }
 }
@@ -162,7 +162,7 @@ class BMFMassTransitRouteLine extends BMFRouteLine implements BMFModel {
       'starting': this.starting?.toMap(),
       'terminal': this.terminal?.toMap(),
       'title': this.title,
-      'steps': this.steps?.map((e) => e?.toMap())?.toList(),
+      'steps': this.steps?.map((e) => e.toMap()).toList(),
       'price': this.price
     };
   }
@@ -211,7 +211,7 @@ class BMFWalkingRouteLine extends BMFRouteLine implements BMFModel {
       'starting': this.starting?.toMap(),
       'terminal': this.terminal?.toMap(),
       'title': this.title,
-      'steps': this.steps?.map((e) => e?.toMap())?.toList(),
+      'steps': this.steps?.map((e) => e.toMap()).toList(),
     };
   }
 }
@@ -259,7 +259,7 @@ class BMFRidingRouteLine extends BMFRouteLine implements BMFModel {
       'starting': this.starting?.toMap(),
       'terminal': this.terminal?.toMap(),
       'title': this.title,
-      'steps': this.steps?.map((e) => e?.toMap())?.toList(),
+      'steps': this.steps?.map((e) => e.toMap()).toList(),
     };
   }
 }
@@ -334,8 +334,8 @@ class BMFDrivingRouteLine extends BMFRouteLine {
       'starting': this.starting?.toMap(),
       'terminal': this.terminal?.toMap(),
       'title': this.title,
-      'steps': this.steps?.map((e) => e?.toMap())?.toList(),
-      'wayPoints': this.wayPoints?.map((e) => e?.toMap())?.toList(),
+      'steps': this.steps?.map((e) => e.toMap()).toList(),
+      'wayPoints': this.wayPoints?.map((e) => e.toMap()).toList(),
       'lightNum': this.lightNum,
       'congestionMetres': this.congestionMetres,
       'taxiFares': this.taxiFares
@@ -386,7 +386,7 @@ class BMFIndoorRouteLine extends BMFRouteLine implements BMFModel {
       'starting': this.starting?.toMap(),
       'terminal': this.terminal?.toMap(),
       'title': this.title,
-      'steps': this.steps?.map((e) => e?.toMap())?.toList()
+      'steps': this.steps?.map((e) => e.toMap()).toList()
     };
   }
 }

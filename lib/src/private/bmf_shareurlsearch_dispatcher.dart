@@ -40,7 +40,7 @@ class BMFShareurlSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFShareURLSearchMethodID.kRequestPoiDetailShareURL,
           {
-            'poiDetailShareURLOption': poiDetailShareURLOption?.toMap(),
+            'poiDetailShareURLOption': poiDetailShareURLOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'];
     } on PlatformException catch (e) {
@@ -63,7 +63,7 @@ class BMFShareurlSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFShareURLSearchMethodID.kRequestLocationShareURL,
           {
-            'reverseGeoShareURLOption': reverseGeoShareURLOption?.toMap(),
+            'reverseGeoShareURLOption': reverseGeoShareURLOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'];
     } on PlatformException catch (e) {
@@ -86,7 +86,7 @@ class BMFShareurlSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFShareURLSearchMethodID.kRequestRoutePlanShareURL,
           {
-            'routePlanShareURLOption': routePlanShareURLOption?.toMap(),
+            'routePlanShareURLOption': routePlanShareURLOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'];
     } on PlatformException catch (e) {

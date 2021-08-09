@@ -53,7 +53,7 @@ class BMFPoiSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFPoiSearchMethodID.kPoiSearchInCity,
           {
-            'poiCitySearchOption': poiCitySearchOption?.toMap(),
+            'poiCitySearchOption': poiCitySearchOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {
@@ -77,7 +77,7 @@ class BMFPoiSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFPoiSearchMethodID.kPoiSearchNearBy,
           {
-            'poiNearbySearchOption': poiNearbySearchOption?.toMap(),
+            'poiNearbySearchOption': poiNearbySearchOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {
@@ -100,7 +100,7 @@ class BMFPoiSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFPoiSearchMethodID.kPoiSearchInbounds,
           {
-            'poiBoundSearchOption': poiBoundSearchOption?.toMap(),
+            'poiBoundSearchOption': poiBoundSearchOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {
@@ -123,7 +123,7 @@ class BMFPoiSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFPoiSearchMethodID.kPoiDetailSearch,
           {
-            'poiDetailSearchOption': poiDetailSearchOption?.toMap(),
+            'poiDetailSearchOption': poiDetailSearchOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {
@@ -146,7 +146,7 @@ class BMFPoiSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFPoiSearchMethodID.kPoiIndoorSearch,
           {
-            'poiIndoorSearchOption': poiIndoorSearchOption?.toMap(),
+            'poiIndoorSearchOption': poiIndoorSearchOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {

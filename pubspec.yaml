@@ -15,6 +15,7 @@ dependencies:
     git:
       url: https://gitee.com/kayoxu/flutter_baidu_mapapi.git
       ref: 'base'
+#    path: /Users/kayoxu/Desktop/平台公司/data/flutter_baidu_mapapi_base
 
 
 dev_dependencies:

@@ -45,7 +45,7 @@ class BMFWalkingRouteResult implements BMFModel {
   Map<String, Object?> toMap() {
     return {
       'suggestAddrResult': this.suggestAddrResult?.toMap(),
-      'routes': this.routes?.map((e) => e?.toMap())?.toList(),
+      'routes': this.routes?.map((e) => e.toMap()).toList(),
       'taxiInfo': this.taxiInfo?.toMap()
     };
   }
@@ -96,8 +96,8 @@ class BMFDrivingRouteResult implements BMFModel {
   Map<String, Object?> toMap() {
     return {
       'suggestAddrResult': this.suggestAddrResult?.toMap(),
-      'routes': this.routes?.map((e) => e?.toMap())?.toList(),
-      'taxiInfos': this.taxiInfos?.map((e) => e?.toMap())?.toList()
+      'routes': this.routes?.map((e) => e.toMap()).toList(),
+      'taxiInfos': this.taxiInfos?.map((e) => e.toMap()).toList()
     };
   }
 }
@@ -137,7 +137,7 @@ class BMFRidingRouteResult implements BMFModel {
   Map<String, Object?> toMap() {
     return {
       'suggestAddrResult': this.suggestAddrResult?.toMap(),
-      'routes': this.routes?.map((e) => e?.toMap())?.toList()
+      'routes': this.routes?.map((e) => e.toMap()).toList()
     };
   }
 }
@@ -183,7 +183,7 @@ class BMFTransitRouteResult implements BMFModel {
     return {
       'taxiInfo': this.taxiInfo?.toMap(),
       'suggestAddrResult': this.suggestAddrResult?.toMap(),
-      'routes': this.routes?.map((e) => e?.toMap())?.toList()
+      'routes': this.routes?.map((e) => e.toMap()).toList()
     };
   }
 }
@@ -250,7 +250,7 @@ class BMFMassTransitRouteResult implements BMFModel {
   Map<String, Object?> toMap() {
     return {
       'suggestAddrResult': this.suggestAddrResult?.toMap(),
-      'routes': this.routes?.map((e) => e?.toMap())?.toList(),
+      'routes': this.routes?.map((e) => e.toMap()).toList(),
       'totalRoutes': this.totalRoutes,
       'taxiInfo': this.taxiInfo?.toMap(),
       'origin': this.origin?.toMap(),
@@ -286,6 +286,6 @@ class BMFIndoorRouteResult implements BMFModel {
 
   @override
   Map<String, Object?> toMap() {
-    return {'routes': this.routes?.map((e) => e?.toMap())?.toList()};
+    return {'routes': this.routes?.map((e) => e.toMap()).toList()};
   }
 }

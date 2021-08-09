@@ -69,7 +69,7 @@ class BMFRouteSearchDisptacher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFRouteSearchMethodID.kTransitRoutePlan,
           {
-            'transitRoutePlanOption': transitRoutePlanOption?.toMap(),
+            'transitRoutePlanOption': transitRoutePlanOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {
@@ -93,7 +93,7 @@ class BMFRouteSearchDisptacher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFRouteSearchMethodID.kMassTransitRoutePlan,
           {
-            'massTransitRoutePlanOption': massTransitRoutePlanOption?.toMap(),
+            'massTransitRoutePlanOption': massTransitRoutePlanOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {
@@ -116,7 +116,7 @@ class BMFRouteSearchDisptacher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFRouteSearchMethodID.kDrivingRoutePlan,
           {
-            'drivingRoutePlanOption': drivingRoutePlanOption?.toMap(),
+            'drivingRoutePlanOption': drivingRoutePlanOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {
@@ -139,7 +139,7 @@ class BMFRouteSearchDisptacher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFRouteSearchMethodID.kWalkingRoutePlan,
           {
-            'walkingRoutePlanOption': walkingRoutePlanOption?.toMap(),
+            'walkingRoutePlanOption': walkingRoutePlanOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {
@@ -162,7 +162,7 @@ class BMFRouteSearchDisptacher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFRouteSearchMethodID.kRidingRoutePlan,
           {
-            'ridingRoutePlanOption': ridingRoutePlanOption?.toMap(),
+            'ridingRoutePlanOption': ridingRoutePlanOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {
@@ -185,7 +185,7 @@ class BMFRouteSearchDisptacher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFRouteSearchMethodID.kIndoorRoutePlanSearch,
           {
-            'indoorRoutePlanOption': indoorRoutePlanOption?.toMap(),
+            'indoorRoutePlanOption': indoorRoutePlanOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {

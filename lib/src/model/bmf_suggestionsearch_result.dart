@@ -107,7 +107,7 @@ class BMFSuggestionInfo implements BMFModel {
       'district': this.district,
       'tag': this.tag,
       'address': this.address,
-      'children': this.children?.map((c) => c?.toMap())?.toList()
+      'children': this.children?.map((c) => c.toMap()).toList()
     };
   }
 }
@@ -140,7 +140,7 @@ class BMFSuggestionSearchResult implements BMFModel {
   @override
   Map<String, Object?> toMap() {
     return {
-      'suggestionList': this.suggestionList?.map((s) => s?.toMap())?.toList()
+      'suggestionList': this.suggestionList?.map((s) => s.toMap()).toList()
     };
   }
 }

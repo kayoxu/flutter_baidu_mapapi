@@ -76,10 +76,10 @@ class BMFWeatherSearchResult implements BMFModel {
     return {
       'realTimeWeather': this.realTimeWeather?.toMap(),
       'location': this.location?.toMap(),
-      'forecasts': this.forecasts?.map((e) => e?.toMap())?.toList(),
-      'forecastHours': this.forecastHours?.map((e) => e?.toMap())?.toList(),
-      'lifeIndexes': this.lifeIndexes?.map((e) => e?.toMap())?.toList(),
-      'weatherAlerts': this.weatherAlerts?.map((e) => e?.toMap())?.toList()
+      'forecasts': this.forecasts?.map((e) => e.toMap()).toList(),
+      'forecastHours': this.forecastHours?.map((e) => e.toMap()).toList(),
+      'lifeIndexes': this.lifeIndexes?.map((e) => e.toMap()).toList(),
+      'weatherAlerts': this.weatherAlerts?.map((e) => e.toMap()).toList()
     };
   }
 }

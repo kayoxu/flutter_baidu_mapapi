@@ -62,7 +62,7 @@ class BMFRouteStep implements BMFModel {
     return {
       'distance': this.distance,
       'duration': this.duration,
-      'points': this.points?.map((e) => e?.toMap())?.toList(),
+      'points': this.points?.map((e) => e.toMap()).toList(),
       'pointsCount': this.pointsCount,
       'name': this.name,
     };
@@ -99,7 +99,7 @@ class BMFBusStep extends BMFRouteStep implements BMFModel {
     return {
       'distance': this.distance,
       'duration': this.duration,
-      'points': this.points?.map((e) => e?.toMap())?.toList(),
+      'points': this.points?.map((e) => e.toMap()).toList(),
       'pointsCount': this.pointsCount,
       'name': this.name
     };
@@ -165,7 +165,7 @@ class BMFTransitStep extends BMFRouteStep implements BMFModel {
     return {
       'distance': this.distance,
       'duration': this.duration,
-      'points': this.points?.map((e) => e?.toMap())?.toList(),
+      'points': this.points?.map((e) => e.toMap()).toList(),
       'pointsCount': this.pointsCount,
       'name': this.name,
       'entrace': this.entrace?.toMap(),
@@ -213,7 +213,7 @@ class BMFMassTransitStep implements BMFModel {
   Map<String, Object?> toMap() {
     return {
       'isSubStep': this.isSubStep,
-      'steps': this.steps?.map((e) => e?.toMap())?.toList()
+      'steps': this.steps?.map((e) => e.toMap()).toList()
     };
   }
 }
@@ -335,7 +335,7 @@ class BMFMassTransitSubStep extends BMFRouteStep implements BMFModel {
     return {
       'distance': this.distance,
       'duration': this.duration,
-      'points': this.points?.map((e) => e?.toMap())?.toList(),
+      'points': this.points?.map((e) => e.toMap()).toList(),
       'pointsCount': this.pointsCount,
       'name': this.name,
       'entraceCoor': this.entraceCoor?.toMap(),
@@ -344,7 +344,7 @@ class BMFMassTransitSubStep extends BMFRouteStep implements BMFModel {
       'stepType': this.stepType?.index,
       'vehicleInfo': this.vehicleInfo?.toMap(),
       'trafficConditions':
-          this.trafficConditions?.map((e) => e?.toMap())?.toList(),
+          this.trafficConditions?.map((e) => e.toMap()).toList(),
     };
   }
 }
@@ -411,7 +411,7 @@ class BMFWalkingStep extends BMFRouteStep {
     return {
       'distance': this.distance,
       'duration': this.duration,
-      'points': this.points?.map((e) => e?.toMap())?.toList(),
+      'points': this.points?.map((e) => e.toMap()).toList(),
       'pointsCount': this.pointsCount,
       'name': this.name,
       'direction': this.direction,
@@ -493,7 +493,7 @@ class BMFRidingStep extends BMFRouteStep implements BMFModel {
     return {
       'distance': this.distance,
       'duration': this.duration,
-      'points': this.points?.map((e) => e?.toMap())?.toList(),
+      'points': this.points?.map((e) => e.toMap()).toList(),
       'pointsCount': this.pointsCount,
       'name': this.name,
       'direction': this.direction,
@@ -597,7 +597,7 @@ class BMFDrivingStep extends BMFRouteStep {
     return {
       'distance': this.distance,
       'duration': this.duration,
-      'points': this.points?.map((e) => e?.toMap())?.toList(),
+      'points': this.points?.map((e) => e.toMap()).toList(),
       'pointsCount': this.pointsCount,
       'name': this.name,
       'direction': this.direction,
@@ -608,7 +608,7 @@ class BMFDrivingStep extends BMFRouteStep {
       'instruction': this.instruction,
       'numTurns': this.numTurns,
       'hasTrafficsInfo': this.hasTrafficsInfo,
-      'traffics': this.traffics?.map((e) => e)?.toList(),
+      'traffics': this.traffics?.map((e) => e).toList(),
       'roadLevel': this.roadLevel
     };
   }
@@ -681,7 +681,7 @@ class BMFIndoorRouteStep extends BMFRouteStep implements BMFModel {
     return {
       'distance': this.distance,
       'duration': this.duration,
-      'points': this.points?.map((e) => e?.toMap())?.toList(),
+      'points': this.points?.map((e) => e.toMap()).toList(),
       'pointsCount': this.pointsCount,
       'name': this.name,
       'entrace': this.entrace?.toMap(),
@@ -689,7 +689,7 @@ class BMFIndoorRouteStep extends BMFRouteStep implements BMFModel {
       'instructions': this.instructions,
       'buildingid': this.buildingid,
       'floorid': this.floorid,
-      'indoorStepNodes': this.indoorStepNodes?.map((e) => e?.toMap())?.toList()
+      'indoorStepNodes': this.indoorStepNodes?.map((e) => e.toMap()).toList()
     };
   }
 }

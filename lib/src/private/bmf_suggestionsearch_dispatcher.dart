@@ -34,7 +34,7 @@ class BMFSuggestionSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFSuggestionSearchMethodID.kSuggestionSearch,
           {
-            'suggestionSearchOption': suggestionSearchOption?.toMap(),
+            'suggestionSearchOption': suggestionSearchOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {

@@ -29,7 +29,7 @@ class BMFRecommendStopSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFRecommendStopSearchMethodID.kRecommendStopSearch,
           {
-            'recommendStopSearchOption': recommendStopSearchOption?.toMap(),
+            'recommendStopSearchOption': recommendStopSearchOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {

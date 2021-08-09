@@ -38,7 +38,7 @@ class BMFGeocodeSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFGeoAndReverseGeoMethodID.kGeoCode,
           {
-            'geoCodeSearchOption': geoCodeSearchOption?.toMap(),
+            'geoCodeSearchOption': geoCodeSearchOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {
@@ -96,7 +96,7 @@ class BMFReverseGeoCodeSearchDispatcher {
       Map map = (await BMFSearchChannelFactory.searchChannel.invokeMethod(
           BMFGeoAndReverseGeoMethodID.kReverseGeoCode,
           {
-            'reverseGeoCodeSearchOption': reverseGeoCodeSearchOption?.toMap(),
+            'reverseGeoCodeSearchOption': reverseGeoCodeSearchOption.toMap(),
           } as dynamic)) as Map;
       result = map['result'] as bool;
     } on PlatformException catch (e) {
