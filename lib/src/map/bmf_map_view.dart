@@ -9,7 +9,7 @@ import 'package:flutter_baidu_mapapi_map/src/map/bmf_map_controller.dart';
 import 'package:flutter_baidu_mapapi_map/src/models/bmf_map_options.dart';
 
 /// 地图创建回调
-typedef BMFMapCreatedCallback = void Function(BMFMapController controller);
+typedef BMFMapCreatedCallback = void Function(BMFMapController? controller);
 
 /// 百度地图Widget
 class BMFMapWidget extends StatefulWidget {
