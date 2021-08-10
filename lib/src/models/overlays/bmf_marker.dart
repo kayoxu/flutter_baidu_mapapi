@@ -178,15 +178,15 @@ class BMFMarker extends BMFOverlay {
         super(zIndex: zIndex, visible: visible);
 
   /// map => BMFMarker
-  BMFMarker.fromMap(Map map)
-      : assert(map['position'] != null),
-        assert(map['icon'] != null),
+  BMFMarker.fromMap(Map? map)
+      : assert(map?['position'] != null),
+        assert(map?['icon'] != null),
         super.fromMap(map) {
     position =
-        map['position'] == null ? null : BMFCoordinate.fromMap(map['position']);
+        map!['position'] == null ? null : BMFCoordinate.fromMap(map['position']);
     title = map['title'];
     subtitle = map["subtitle"];
-    isLockedToScreen = map['isLockedToScreen'] as bool;
+    isLockedToScreen = map['isLockedToScreen'] as bool?;
     screenPointToLock = map['screenPointToLock'] == null
         ? null
         : BMFPoint.fromMap(map['screenPointToLock']);
@@ -200,14 +200,14 @@ class BMFMarker extends BMFOverlay {
     draggable = map['draggable'];
     selected = map['selected'];
     canShowCallout = map['canShowCallout'];
-    hidePaopaoWhenSingleTapOnMap = map['hidePaopaoWhenSingleTapOnMap'] as bool;
-    hidePaopaoWhenDoubleTapOnMap = map['hidePaopaoWhenDoubleTapOnMap'] as bool;
+    hidePaopaoWhenSingleTapOnMap = map['hidePaopaoWhenSingleTapOnMap'] as bool?;
+    hidePaopaoWhenDoubleTapOnMap = map['hidePaopaoWhenDoubleTapOnMap'] as bool?;
     hidePaopaoWhenTwoFingersTapOnMap =
-        map['hidePaopaoWhenTwoFingersTapOnMap'] as bool;
-    hidePaopaoWhenSelectOthers = map['hidePaopaoWhenSelectOthers'] as bool;
-    hidePaopaoWhenDrag = map['hidePaopaoWhenDrag'] as bool;
-    hidePaopaoWhenDragOthers = map['hidePaopaoWhenDragOthers'] as bool;
-    displayPriority = map['displayPriority'] as int;
+        map['hidePaopaoWhenTwoFingersTapOnMap'] as bool?;
+    hidePaopaoWhenSelectOthers = map['hidePaopaoWhenSelectOthers'] as bool?;
+    hidePaopaoWhenDrag = map['hidePaopaoWhenDrag'] as bool?;
+    hidePaopaoWhenDragOthers = map['hidePaopaoWhenDragOthers'] as bool?;
+    displayPriority = map['displayPriority'] as int?;
     scaleX = map['scaleX'];
     scaleY = map['scaleY'];
     alpha = map['alpha'];
