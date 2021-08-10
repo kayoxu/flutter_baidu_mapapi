@@ -1,11 +1,13 @@
 package com.baidu.bmfmap.map.overlayHandler;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import com.baidu.bmfmap.BMFMapController;
+import com.baidu.bmfmap.R;
 import com.baidu.bmfmap.utils.Constants;
 import com.baidu.bmfmap.utils.Env;
 import com.baidu.bmfmap.utils.converter.FlutterDataConveter;
@@ -17,10 +19,18 @@ import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.Overlay;
 import com.baidu.mapapi.model.LatLng;
 
+import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.Nullable;
 
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -205,6 +215,26 @@ public class MarkerHandler extends OverlayHandler {
         return true;
     }
 
+
+    //把布局变成Bitmap
+    public static Bitmap getViewBitmap(View addViewContent) {
+
+        addViewContent.setDrawingCacheEnabled(true);
+
+        addViewContent.measure(
+                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED),
+                View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+        addViewContent.layout(0, 0,
+                addViewContent.getMeasuredWidth(),
+                addViewContent.getMeasuredHeight());
+
+        addViewContent.buildDrawingCache();
+        Bitmap cacheBitmap = addViewContent.getDrawingCache();
+        Bitmap bitmap = Bitmap.createBitmap(cacheBitmap);
+
+        return bitmap;
+    }
+
     /**
      * 解析并设置markertions里的信息
      *
@@ -224,15 +254,77 @@ public class MarkerHandler extends OverlayHandler {
         }
         markerOptions.position(latLng);
 
+        BitmapDescriptor bitmapDescriptor2 = null;
+        BitmapDescriptor bitmapDescriptor3 = null;
         BitmapDescriptor bitmapDescriptor =
                 BitmapDescriptorFactory.fromAsset("flutter_assets/" + icon);
         if (null == bitmapDescriptor) {
             return false;
         }
 
-        markerOptions.icon(bitmapDescriptor);
-        mMarkerBitmapMap.put(id, bitmapDescriptor);
+        boolean titleHorizontal = false;
+        Object horizontal = markerOptionsMap.get("titleHorizontal");
+        if (markerOptionsMap.containsKey("titleHorizontal") && (horizontal instanceof Boolean)) {
+            titleHorizontal = (boolean) markerOptionsMap.get("titleHorizontal");
+        }
 
+        boolean hasIcon2 = false;
+        boolean hasIcon3 = false;
+
+        if (markerOptionsMap.containsKey("title") && markerOptionsMap.get("title") != null) {
+
+            bitmapDescriptor = getBitmapDescriptor(markerOptionsMap, bitmapDescriptor, titleHorizontal);
+
+            if (null == bitmapDescriptor) return false;
+
+            if (markerOptionsMap.get("icon2") != null) {
+                String icon2 = (String) markerOptionsMap.get("icon2");
+                bitmapDescriptor2 =
+                        BitmapDescriptorFactory.fromAsset("flutter_assets/" + icon2);
+                if (null != bitmapDescriptor2) {
+                    hasIcon2 = true;
+                    bitmapDescriptor2 = getBitmapDescriptor(markerOptionsMap, bitmapDescriptor2, titleHorizontal);
+                }
+            }
+
+            if (markerOptionsMap.get("icon3") != null) {
+                String icon3 = (String) markerOptionsMap.get("icon3");
+                bitmapDescriptor3 =
+                        BitmapDescriptorFactory.fromAsset("flutter_assets/" + icon3);
+                if (null != bitmapDescriptor3) {
+                    hasIcon3 = true;
+                    bitmapDescriptor3 = getBitmapDescriptor(markerOptionsMap, bitmapDescriptor3, titleHorizontal);
+                }
+            }
+        }
+
+        if (!hasIcon2 && !hasIcon3) {
+            markerOptions.icon(bitmapDescriptor);
+            mMarkerBitmapMap.put(id, bitmapDescriptor);
+            if (titleHorizontal) {
+                markerOptions.anchor(0.0f, 0);
+            }else {
+                markerOptions.anchor(0.5f, 0);
+            }
+        } else {
+            ArrayList<BitmapDescriptor> bs = new ArrayList<>();
+            bs.add(bitmapDescriptor);
+
+            if (null != bitmapDescriptor2) {
+                bs.add(bitmapDescriptor2);
+                mMarkerBitmapMap.put(id + 1000000, bitmapDescriptor2);
+            }
+            if (null != bitmapDescriptor3) {
+                bs.add(bitmapDescriptor3);
+                mMarkerBitmapMap.put(id + 1000001, bitmapDescriptor3);
+            }
+            markerOptions.icons(bs);
+            if (titleHorizontal) {
+                markerOptions.anchor(0.0f, 0);
+            }else {
+                markerOptions.anchor(0.5f, 0);
+            }
+        }
         //centerOffset
         Map<String, Object> centerOffset =
                 new TypeConverter<Map<String, Object>>().getValue(markerOptionsMap, "centerOffset");
@@ -290,6 +382,31 @@ public class MarkerHandler extends OverlayHandler {
         return true;
     }
 
+    @Nullable
+    private BitmapDescriptor getBitmapDescriptor(Map<String, Object> markerOptionsMap, BitmapDescriptor bitmapDescriptor, boolean titleHorizontal) {
+        LayoutInflater inflater = LayoutInflater.from(mMapController.getContext());
+        View root = inflater.inflate(titleHorizontal ? R.layout.map_dot_info2 : R.layout.map_dot_info, null);
+        if (markerOptionsMap.get("title2") != null) {
+            root = inflater.inflate(titleHorizontal ? R.layout.map_dot_info_more2 : R.layout.map_dot_info_more, null);
+            TextView tv2 = root.findViewById(R.id.title2);
+            tv2.setText(markerOptionsMap.get("title2") + "");
+            if (markerOptionsMap.containsKey("title2Color") && markerOptionsMap.get("title2Color") != null) {
+                tv2.setTextColor(Color.parseColor("#" + (String) markerOptionsMap.get("title2Color")));
+            }
+        }
+
+        TextView tv = root.findViewById(R.id.title);
+        ImageView iv = root.findViewById(R.id.icon);
+        tv.setText(markerOptionsMap.get("title") + "");
+        iv.setImageBitmap(bitmapDescriptor.getBitmap());
+        if (markerOptionsMap.containsKey("titleColor") && markerOptionsMap.get("titleColor") != null) {
+            tv.setTextColor(Color.parseColor("#" + (String) markerOptionsMap.get("titleColor")));
+        }
+
+        bitmapDescriptor = BitmapDescriptorFactory.fromBitmap(getViewBitmap(root));
+        return bitmapDescriptor;
+    }
+
     private boolean addMarkers(MethodCall call) {
 
         if (Env.DEBUG) {
@@ -330,6 +447,8 @@ public class MarkerHandler extends OverlayHandler {
         String id = new TypeConverter<String>().getValue(argument, "id");
         Overlay overlay = mMarkerMap.get(id);
         BitmapDescriptor bitmapDescriptor = mMarkerBitmapMap.get(id);
+        BitmapDescriptor bitmapDescriptor2 = mMarkerBitmapMap.get(id + 1000000);
+        BitmapDescriptor bitmapDescriptor3 = mMarkerBitmapMap.get(id + 1000001);
 
         boolean ret = true;
         if (null != overlay) {
@@ -339,6 +458,14 @@ public class MarkerHandler extends OverlayHandler {
             ret = false;
         }
 
+        if (null != bitmapDescriptor2) {
+            bitmapDescriptor2.recycle();
+            mMarkerBitmapMap.remove(id + 1000000);
+        }
+        if (null != bitmapDescriptor3) {
+            bitmapDescriptor3.recycle();
+            mMarkerBitmapMap.remove(id + 1000001);
+        }
         if (null != bitmapDescriptor) {
             bitmapDescriptor.recycle();
             mMarkerBitmapMap.remove(id);

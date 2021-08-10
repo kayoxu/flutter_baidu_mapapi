@@ -16,7 +16,9 @@ import com.baidu.mapapi.model.LatLngBounds;
 
 import android.content.Context;
 import android.graphics.Point;
+
 import androidx.annotation.NonNull;
+
 import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
@@ -76,7 +78,7 @@ public class BMFMapController implements MethodChannel.MethodCallHandler, BaiduM
     }
 
     private FlutterMapViewWrapper getFlutterMapViewWrapper(Context context, String viewType,
-                                                     BaiduMapOptions options) {
+                                                           BaiduMapOptions options) {
         FlutterMapViewWrapper flutterMapViewWrapper = null;
         if (Constants.ViewType.sMapView.equals(viewType)) {
             flutterMapViewWrapper = new MapViewWrapper(context, options);
@@ -92,6 +94,10 @@ public class BMFMapController implements MethodChannel.MethodCallHandler, BaiduM
 
     public BaiduMap getBaiduMap() {
         return mBaiduMap;
+    }
+
+    public Context getContext() {
+        return mContext;
     }
 
     public MethodChannel getMethodChannel() {

@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_baidu_mapapi_base/flutter_baidu_mapapi_base.dart'
-    show BMFCoordinate, BMFPoint;
+    show BMFCoordinate, BMFPoint, ColorUtil;
 import 'package:flutter_baidu_mapapi_map/flutter_baidu_mapapi_map.dart';
 import 'package:flutter_baidu_mapapi_map/src/models/overlays/bmf_overlay.dart';
 import 'package:flutter_baidu_mapapi_map/src/private/mapdispatcher/bmf_map_dispatcher_factory.dart';
@@ -40,6 +40,21 @@ class BMFMarkerDisplayPriority {
 class BMFMarker extends BMFOverlay {
   /// 标题
   String? title;
+
+  /// 标题颜色
+  Color? titleColor;
+
+  /// 标题icon左右排列
+  bool? titleHorizontal;
+
+  /// 标题2
+  String? title2;
+
+  /// 标题2颜色
+  Color? title2Color;
+
+  String? icon2;
+  String? icon3;
 
   /// 子标题
   ///
@@ -150,6 +165,12 @@ class BMFMarker extends BMFOverlay {
       {required this.position,
       required this.icon,
       this.title,
+      this.titleColor,
+      this.titleHorizontal = false,
+      this.title2,
+      this.title2Color,
+      this.icon2,
+      this.icon3,
       this.subtitle,
       this.isLockedToScreen: false,
       this.screenPointToLock,
@@ -182,9 +203,16 @@ class BMFMarker extends BMFOverlay {
       : assert(map?['position'] != null),
         assert(map?['icon'] != null),
         super.fromMap(map) {
-    position =
-        map!['position'] == null ? null : BMFCoordinate.fromMap(map['position']);
+    position = map!['position'] == null
+        ? null
+        : BMFCoordinate.fromMap(map['position']);
     title = map['title'];
+    titleColor = ColorUtil.hexToColor(map['titleColor']);
+    titleHorizontal = map['titleHorizontal'];
+    title2 = map['title2'];
+    title2Color = ColorUtil.hexToColor(map['title2Color']);
+    icon2 = map['icon2'];
+    icon3 = map['icon3'];
     subtitle = map["subtitle"];
     isLockedToScreen = map['isLockedToScreen'] as bool?;
     screenPointToLock = map['screenPointToLock'] == null
@@ -224,8 +252,13 @@ class BMFMarker extends BMFOverlay {
     return {
       'id': this.Id,
       'position': this.position?.toMap(),
-      'title': this.title ,
-      'subtitle': this.subtitle,
+      'title': this.title,
+      'titleColor': this.titleColor?.value.toRadixString(16),
+      'titleHorizontal': this.titleHorizontal,
+      'title2Color': this.title2Color?.value.toRadixString(16),
+      'title2': this.title2,
+      'icon2': this.icon2,
+      'icon3': this.icon3,
       'isLockedToScreen': this.isLockedToScreen,
       'screenPointToLock': this.screenPointToLock?.toMap(),
       'identifier': this.identifier,
@@ -233,15 +266,12 @@ class BMFMarker extends BMFOverlay {
       'centerOffset': this.centerOffset?.toMap(),
       'enabled3D': this.enabled3D,
       'enabled': this.enabled,
-      'draggable': this.draggable ,
+      'draggable': this.draggable,
       'selected': this.selected,
       'canShowCallout': this.canShowCallout,
-      'hidePaopaoWhenSingleTapOnMap':
-          this.hidePaopaoWhenSingleTapOnMap,
-      'hidePaopaoWhenDoubleTapOnMap':
-          this.hidePaopaoWhenDoubleTapOnMap,
-      'hidePaopaoWhenTwoFingersTapOnMap':
-          this.hidePaopaoWhenTwoFingersTapOnMap,
+      'hidePaopaoWhenSingleTapOnMap': this.hidePaopaoWhenSingleTapOnMap,
+      'hidePaopaoWhenDoubleTapOnMap': this.hidePaopaoWhenDoubleTapOnMap,
+      'hidePaopaoWhenTwoFingersTapOnMap': this.hidePaopaoWhenTwoFingersTapOnMap,
       'hidePaopaoWhenSelectOthers': this.hidePaopaoWhenSelectOthers,
       'hidePaopaoWhenDrag': this.hidePaopaoWhenDrag,
       'hidePaopaoWhenDragOthers': this.hidePaopaoWhenDragOthers,
@@ -525,7 +555,7 @@ class BMFMarker extends BMFOverlay {
       'value': zIndex,
     });
 
-    if (ret==true) {
+    if (ret == true) {
       this.zIndex = zIndex;
     }
 
