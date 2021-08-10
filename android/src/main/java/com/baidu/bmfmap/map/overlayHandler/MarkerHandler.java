@@ -175,6 +175,8 @@ public class MarkerHandler extends OverlayHandler {
         Bundle bundle = new Bundle();
         bundle.putString("id", id);
         bundle.putString("icon", icon);
+        bundle.putString("title", (String) argument.get("title"));
+        bundle.putString("identifier", (String) argument.get("identifier"));
 
         overlay.setExtraInfo(bundle);
 
@@ -271,6 +273,7 @@ public class MarkerHandler extends OverlayHandler {
         boolean hasIcon2 = false;
         boolean hasIcon3 = false;
 
+
         if (markerOptionsMap.containsKey("title") && markerOptionsMap.get("title") != null) {
 
             bitmapDescriptor = getBitmapDescriptor(markerOptionsMap, bitmapDescriptor, titleHorizontal);
@@ -320,7 +323,7 @@ public class MarkerHandler extends OverlayHandler {
             }
             markerOptions.icons(bs);
             if (titleHorizontal) {
-                markerOptions.anchor(0.0f, 0);
+                markerOptions.anchor(0.0f, 0.5f);
             }else {
                 markerOptions.anchor(0.5f, 0);
             }

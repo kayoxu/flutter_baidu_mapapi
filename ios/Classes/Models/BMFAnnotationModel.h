@@ -14,6 +14,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BMFAnnotationModel : BMFModel
 
+ 
+@property (nonatomic, copy) NSString *title2;
+@property (nonatomic, copy) NSString *titleColor;
+@property (nonatomic, copy) NSString *title2Color;
+@property (nonatomic, copy) NSString *icon2;
+@property (nonatomic, copy) NSString *icon3;
+@property (nonatomic, assign) BOOL titleHorizontal;
+
 /// flutter层mark的唯一id(用于区别哪个marker)
 @property (nonatomic, copy) NSString *Id;
 

@@ -32,7 +32,33 @@
         
         if (model.icon) {
             //TODO:image加入空值判断
-            annotationView.image = [UIImage imageWithContentsOfFile:[[BMFFileManager defaultCenter] pathForFlutterImageName:model.icon]];
+            
+            UIImage* i1 = [UIImage imageWithContentsOfFile:[[BMFFileManager defaultCenter] pathForFlutterImageName:model.icon]];
+            
+            if (model.icon2 || model.icon3) {
+                UIImageView *annotationImage = [[UIImageView alloc] initWithFrame:annotationView.frame];
+                NSMutableArray *images = [NSMutableArray array];
+                [images addObject:i1];
+                if (model.icon2) {
+                    UIImage* i2 = [UIImage imageWithContentsOfFile:[[BMFFileManager defaultCenter] pathForFlutterImageName:model.icon2]];
+                    
+                    [images addObject:i2];
+                }
+                if (model.icon3) {
+                    UIImage* i3 = [UIImage imageWithContentsOfFile:[[BMFFileManager defaultCenter] pathForFlutterImageName:model.icon3]];
+                    [images addObject:i3];
+                }
+                annotationImage.animationImages = images;
+                annotationImage.animationDuration = 0.5 * 3;
+                annotationImage.animationRepeatCount = 0;
+                [annotationImage startAnimating];
+                
+                annotationView.image = nil;
+                
+                [annotationView addSubview:annotationImage];
+            }else{
+                annotationView.image = [UIImage imageWithContentsOfFile:[[BMFFileManager defaultCenter] pathForFlutterImageName:model.icon]];
+            }
         }
         
         if (model.centerOffset) {

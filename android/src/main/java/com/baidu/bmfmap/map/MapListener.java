@@ -508,7 +508,8 @@ public class MapListener implements BaiduMap.OnMapClickListener, BaiduMap.OnMapL
 
         Map<String, Object> markerMap = new HashMap<>();
         markerMap.put("id", id);
-        markerMap.put("title", marker.getTitle());
+        markerMap.put("title", bundle.getString("title"));
+        markerMap.put("identifier", bundle.getString("identifier"));
         markerMap.put("icon", icon);
         markerMap.put("position", FlutterDataConveter.latLngToMap(marker.getPosition()));
         markerMap.put("isLockedToScreen", marker.isFixed());
