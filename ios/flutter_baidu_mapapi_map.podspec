@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
   s.dependency 'Flutter'
   s.dependency 'flutter_baidu_mapapi_base'
   s.dependency 'BaiduMapKit/Map','6.2.0'
+  s.dependency 'Masonry'
   s.platform = :ios, '8.0'
   s.static_framework = true
 

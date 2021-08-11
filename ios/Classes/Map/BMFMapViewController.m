@@ -28,6 +28,8 @@
 
 #import "BMFOverlayViewManager.h"
 #import "BMFPolylineModel.h"
+#import "UIGestureRecognizer+YYAdd.h"
+
 
 static NSString *kBMFMapChannelName = @"flutter_bmfmap/map_";
 static NSString *kMapMethods = @"flutter_bmfmap/map/";
@@ -239,7 +241,21 @@ static NSString *kProjectionMethods = @"flutter_bmfmap/projection/";
 #pragma mark - annotationView
 /// 根据anntation生成对应的View
 - (BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation {
-    return [BMFAnnotationViewManager mapView:mapView viewForAnnotation:annotation];
+    
+    BMKAnnotationView* view = [BMFAnnotationViewManager mapView:mapView viewForAnnotation:annotation];
+    
+//    if (view.tag == 99791233) {
+//        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithActionBlock:^(id  _Nonnull sender) {
+//            NSLog(@"---单击手势-------");
+//
+//
+//        }];
+//        tap.numberOfTapsRequired = 1;
+//        [view addGestureRecognizer:tap];
+//
+//    }
+    
+    return view;
 }
 
 /// 当mapView新添加annotation views时，调用此接口
