@@ -15,10 +15,10 @@ dependencies:
     sdk: flutter
   flutter_plugin_android_lifecycle: ^2.0.0
   flutter_baidu_mapapi_base:
-    #    git:
-    #      url: https://gitee.com/kayoxu/flutter_baidu_mapapi.git
-    #      ref: 'base'
-    path: /Users/kayoxu/Desktop/平台公司/data/flutter_baidu_mapapi_base
+    git:
+      url: https://gitee.com/kayoxu/flutter_baidu_mapapi.git
+      ref: 'base'
+#    path: /Users/kayoxu/Desktop/平台公司/data/flutter_baidu_mapapi_base
 
 dev_dependencies:
   flutter_test:
