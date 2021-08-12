@@ -15,6 +15,7 @@ Pod::Spec.new do |s|
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
+  s.resources = 'Assets/**/*.png'
   s.dependency 'Flutter'
   s.dependency 'flutter_baidu_mapapi_base'
   s.dependency 'BaiduMapKit/Map','6.2.0'

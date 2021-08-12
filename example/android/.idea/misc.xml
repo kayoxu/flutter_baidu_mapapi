@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="alwaysUpdateSnapshots" value="true" />
-      </MavenGeneralSettings>
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../android/src/main/res/drawable/bg_edittext_focused.xml" value="0.2969230769230769" />
+        <entry key="../../android/src/main/res/drawable/bg_edittext_normal.xml" value="0.2969230769230769" />
+        <entry key="../../android/src/main/res/drawable/launch_background.xml" value="0.2969230769230769" />
+        <entry key="../../android/src/main/res/layout/map_dot_info.xml" value="0.23052536231884058" />
+        <entry key="../../android/src/main/res/layout/map_dot_info2.xml" value="0.5" />
+        <entry key="../../android/src/main/res/layout/map_dot_info3.xml" value="0.22708333333333333" />
+        <entry key="../../android/src/main/res/layout/map_dot_info4.xml" value="0.22708333333333333" />
+        <entry key="../../android/src/main/res/layout/map_dot_info_more.xml" value="0.5" />
+        <entry key="../../android/src/main/res/layout/map_dot_info_more2.xml" value="0.30104166666666665" />
+      </map>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">

@@ -30,15 +30,9 @@
     <output url="file://$MODULE_DIR$/../../../../build/flutter_baidu_mapapi_base/intermediates/javac/debug/classes" />
     <output-test url="file://$MODULE_DIR$/../../../../build/flutter_baidu_mapapi_base/intermediates/javac/debugUnitTest/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../../../../../flutter_baidu_mapapi_base">
+    <content url="file://$MODULE_DIR$/../../../../../../flutter_baidu_mapapi_base/android">
       <sourceFolder url="file://$MODULE_DIR$/../../../../../../flutter_baidu_mapapi_base/android/src/main/java" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../../../../flutter_baidu_mapapi_base/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../../../../flutter_baidu_mapapi_base/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/../../../../../../flutter_baidu_mapapi_base/android/.gradle" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../../../../flutter_baidu_mapapi_base/build" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../../../../flutter_baidu_mapapi_base/example/.dart_tool" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../../../../flutter_baidu_mapapi_base/example/.pub" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../../../../flutter_baidu_mapapi_base/example/build" />
     </content>
     <content url="file://$MODULE_DIR$/../../../../build/flutter_baidu_mapapi_base/generated/aidl_source_output_dir/debug/compileDebugAidl/out" />
     <content url="file://$MODULE_DIR$/../../../../build/flutter_baidu_mapapi_base/generated/aidl_source_output_dir/debugAndroidTest/compileDebugAndroidTestAidl/out" />
@@ -61,8 +55,8 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 28 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: ./../../../flutter_baidu_mapapi_base/android/libs/BaiduLBS_custom_android.jar" level="project" />
-    <orderEntry type="library" name="Gradle: io.flutter:flutter_embedding_debug:1.0.0-a1440ca392ca23e874a105c5f3248b495bd0e247" level="project" />
+    <orderEntry type="library" name="Gradle: ./../../../flutter_baidu_mapapi_base/android/libs/BaiduLBS_Android.jar" level="project" />
+    <orderEntry type="library" name="Gradle: io.flutter:flutter_embedding_debug:1.0.0-241c87ad800beeab545ab867354d4683d5bfb6ce" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-common-java8:2.2.0" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-common:2.2.0" level="project" />
     <orderEntry type="library" name="Gradle: androidx.arch.core:core-common:2.1.0" level="project" />
@@ -81,6 +75,5 @@
     <orderEntry type="library" name="Gradle: androidx.arch.core:core-runtime:2.0.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.versionedparcelable:versionedparcelable:1.1.0@aar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-viewmodel:2.1.0@aar" level="project" />
-    <orderEntry type="library" name="Dart SDK" level="project" />
   </component>
 </module>
