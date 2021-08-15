@@ -55,25 +55,23 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_baidu_mapapi_base:
-    dependency: "direct main"
-    description:
-      path: "/Users/kayoxu/Desktop/平台公司/data/flutter_baidu_mapapi_base"
-      relative: false
-    source: path
-    version: "2.0.1"
-  flutter_plugin_android_lifecycle:
-    dependency: "direct main"
-    description:
-      name: flutter_plugin_android_lifecycle
-      url: "https://pub.flutter-io.cn"
-    source: hosted
-    version: "2.0.2"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: "direct main"
+    description: flutter
+    source: sdk
+    version: "0.0.0"
+  js:
+    dependency: transitive
+    description:
+      name: js
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.6.3"
   matcher:
     dependency: transitive
     description:

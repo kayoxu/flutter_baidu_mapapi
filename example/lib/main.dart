@@ -1,43 +1,60 @@
-// import 'dart:io' show Platform;
-// import 'package:flutter/material.dart';
-//
-// Future<void> main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//
-//   // 百度地图sdk初始化鉴权
-//   if (Platform.isIOS) {
-//     BMFMapSDK.setApiKeyAndCoordType(
-//         'yFDD3IlfSk2xTdQ0G41MjRnzd5gUVG1C', BMF_COORD_TYPE.BD09LL);
-//   } else if (Platform.isAndroid) {
-//     // Android 目前不支持接口设置Apikey,
-//     // 请在主工程的Manifest文件里设置，详细配置方法请参考官网(https://lbsyun.baidu.com/)demo
-//     BMFMapSDK.setCoordType(BMF_COORD_TYPE.BD09LL);
-//   }
-//   Map map = await BMFMapAPI_Map.nativeMapVersion;
-//   print('获取原生地图版本号：$map');
-//   runApp(new MyApp());
-// }
-//
-// class MyApp extends StatefulWidget {
-//   @override
-//   _MyAppState createState() => _MyAppState();
-// }
-//
-// class _MyAppState extends State<MyApp> {
-//   @override
-//   void initState() {
-//     super.initState();
-//   }
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: Scaffold(
-//           appBar: BMFAppBar(
-//             title: '百度地图flutter插件Demo',
-//             isBack: false,
-//           ),
-//           body: FlutterBMFMapDemo()),
-//     );
-//   }
-// }
+import 'package:flutter/material.dart';
+import 'dart:async';
+
+import 'package:flutter/services.dart';
+import 'package:flutter_baidu_mapapi_map_web/flutter_baidu_mapapi_map_web.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String _platformVersion = 'Unknown';
+
+  @override
+  void initState() {
+    super.initState();
+    initPlatformState();
+  }
+
+  // Platform messages are asynchronous, so we initialize in an async method.
+  Future<void> initPlatformState() async {
+    String platformVersion;
+    // Platform messages may fail, so we use a try/catch PlatformException.
+    // We also handle the message potentially returning null.
+    try {
+      platformVersion =
+          await FlutterBaiduMapapiMapWeb.platformVersion ?? 'Unknown platform version';
+    } on PlatformException {
+      platformVersion = 'Failed to get platform version.';
+    }
+
+    // If the widget was removed from the tree while the asynchronous platform
+    // message was in flight, we want to discard the reply rather than calling
+    // setState to update our non-existent appearance.
+    if (!mounted) return;
+
+    setState(() {
+      _platformVersion = platformVersion;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Plugin example app'),
+        ),
+        body: Center(
+          child: Text('Running on: $_platformVersion\n'),
+        ),
+      ),
+    );
+  }
+}

@@ -1,6 +1,6 @@
-# flutter_bmfmap_example
+# flutter_baidu_mapapi_map_web_example
 
-Demonstrates how to use the flutter_bmfmap plugin.
+Demonstrates how to use the flutter_baidu_mapapi_map_web plugin.
 
 ## Getting Started
 
