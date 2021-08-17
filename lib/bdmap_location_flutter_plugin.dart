@@ -70,10 +70,10 @@ class LocationFlutterPlugin {
   /// 原生端回传键值对map到flutter端
   /// map中key为isInChina对应的value，如果为1则判断是在国内，为0则判断是在国外
   /// map中存在key为nearby则判断为已到达设置监听位置附近
-  Stream<Map<String, Object>?> onResultCallback() {
-    Stream<Map<String, Object>>? _resultMap;
+  Stream<Map<String, Object?>> onResultCallback() {
+    Stream<Map<String, Object?>>? _resultMap;
     if (_resultMap == null) {
-      _resultMap = _stream.receiveBroadcastStream().map<Map<String, Object>>(
+      _resultMap = _stream.receiveBroadcastStream().map<Map<String, Object?>>(
           (element) => element.cast<String, Object>());
     }
     return _resultMap;
