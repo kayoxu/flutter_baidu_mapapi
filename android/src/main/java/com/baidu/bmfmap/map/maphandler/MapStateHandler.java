@@ -25,6 +25,7 @@ import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.text.TextUtils;
+
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 
@@ -68,7 +69,7 @@ public class MapStateHandler extends BMapHandler {
                 setNewCoordinateBounds(call, result);
                 break;
             case Constants.MethodProtocol.MapStateProtocol.sMapSetVisibleMapBoundsWithPaddingMethod:
-                setVisibleMapBoundsWithPaddingMethod(call, result);
+                setVisibleMapBoundsWithPaddingMethod(context, call, result);
                 break;
             default:
                 break;
@@ -307,7 +308,7 @@ public class MapStateHandler extends BMapHandler {
     /**
      * 根据Padding设置地理范围的合适缩放级别
      */
-    private void setVisibleMapBoundsWithPaddingMethod(MethodCall call,
+    private void setVisibleMapBoundsWithPaddingMethod(Context context, MethodCall call,
                                                       MethodChannel.Result result) {
         Map<String, Object> argument = call.arguments();
         if (null == argument || null == mBaiduMap) {
@@ -349,9 +350,14 @@ public class MapStateHandler extends BMapHandler {
             return;
         }
         MapStatusUpdate mapStatusUpdate = MapStatusUpdateFactory.newLatLngBounds(latLngBounds,
-                left.intValue(), top.intValue(), right.intValue(), bottom.intValue());
+                dp2px(context, left.intValue()), dp2px(context, top.intValue()), dp2px(context, right.intValue()), dp2px(context, bottom.intValue()));
         mBaiduMap.setMapStatus(mapStatusUpdate);
         result.success(true);
+    }
+
+    public static int dp2px(Context context, float dpValue) {
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int) (dpValue * scale + 0.5f);
     }
 
     private void updateMap() {

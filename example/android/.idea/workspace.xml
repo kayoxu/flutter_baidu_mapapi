@@ -1,58 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0517450b-0cb5-4447-91d7-cc60079e71ab" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle_____________flutter_baidu_mapapi_base_android_libs_BaiduLBS_Android_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_arm64_v8a_debug_1_0_0_241c87ad800beeab545ab867354d4683d5bfb6ce.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_armeabi_v7a_debug_1_0_0_241c87ad800beeab545ab867354d4683d5bfb6ce.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_flutter_embedding_debug_1_0_0_241c87ad800beeab545ab867354d4683d5bfb6ce.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_x86_64_debug_1_0_0_241c87ad800beeab545ab867354d4683d5bfb6ce.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_x86_debug_1_0_0_241c87ad800beeab545ab867354d4683d5bfb6ce.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_mockito_mockito_core_1_10_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/-2084040967/android.flutter_plugin_android_lifecycle.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/-907001116/android.flutter_baidu_mapapi_map.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules/1499633673/android.flutter_baidu_mapapi_base.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+    <list default="true" id="54b4c1cf-6ad1-4d5e-b036-a7263ecc5866" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../.idea/flutter_baidu_mapapi_base-2.0.1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/flutter_baidu_mapapi_base-2.0.1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map/maphandler/MapStateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map/maphandler/MapStateHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map/overlayHandler/MarkerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map/overlayHandler/MarkerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/$CACHE_FILE$" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copyright/Baidu.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/copyright/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle_____________flutter_baidu_mapapi_base_android_libs_BaiduLBS_custom_android_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_arm64_v8a_debug_1_0_0_a1440ca392ca23e874a105c5f3248b495bd0e247.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_armeabi_v7a_debug_1_0_0_a1440ca392ca23e874a105c5f3248b495bd0e247.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_flutter_embedding_debug_1_0_0_a1440ca392ca23e874a105c5f3248b495bd0e247.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_x86_64_debug_1_0_0_a1440ca392ca23e874a105c5f3248b495bd0e247.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_flutter_x86_debug_1_0_0_a1440ca392ca23e874a105c5f3248b495bd0e247.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/-967642332/android.flutter_baidu_mapapi_base.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/675977321/android.flutter_baidu_mapapi_map.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/android.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/android.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/-2084040967/android.flutter_plugin_android_lifecycle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/-2084040967/android.flutter_plugin_android_lifecycle.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/-907001116/android.flutter_baidu_mapapi_map.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/-907001116/android.flutter_baidu_mapapi_map.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/1499633673/android.flutter_baidu_mapapi_base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/1499633673/android.flutter_baidu_mapapi_base.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/../ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ios/Classes/Map/BMFAnnotationViewManager.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/Classes/Map/BMFAnnotationViewManager.m" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ios/Classes/Models/BMFAnnotationModel.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../ios/Classes/Models/BMFAnnotationModel.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,17 +27,10 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="layoutResourceFile_vertical" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1wWF4ki1O76OlxwOy060sUyJnBO" />
+  <component name="ProjectId" id="1wsqPJQmm72KP1XaKEpp6W6ZveB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="flattenPackages" value="true" />
@@ -88,25 +42,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="android-custom-view/Users/kayoxu/Library/Android/sdk/sources/android-28/android/view/View.java_SELECTED" value="View" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/../../android/src/main/res/drawable-xxhdpi" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../android/src/main/res/drawable" />
-    <property name="settings.editor.selected.configurable" value="http.proxy" />
-    <property name="show.do.not.copy.http.proxy.settings.to.gradle" value="true" />
     <property name="show.migrate.to.gradle.popup" value="false" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../../android/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/../../android/src/main/res/drawable-xxhdpi" />
-      <recent name="$PROJECT_DIR$/../../android/src/main/res/layout" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/../../android/src/main/res/drawable-xxdpi" />
-      <recent name="$PROJECT_DIR$/../../android/src/main/res/drawable" />
-    </key>
   </component>
   <component name="RunManager">
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
@@ -171,11 +108,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0517450b-0cb5-4447-91d7-cc60079e71ab" name="Default Changelist" comment="" />
-      <created>1628566249044</created>
+      <changelist id="54b4c1cf-6ad1-4d5e-b036-a7263ecc5866" name="Default Changelist" comment="" />
+      <created>1629257618310</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1628566249044</updated>
+      <updated>1629257618310</updated>
     </task>
     <servers />
   </component>

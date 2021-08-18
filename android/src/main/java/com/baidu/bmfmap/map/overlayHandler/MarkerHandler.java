@@ -274,9 +274,10 @@ public class MarkerHandler extends OverlayHandler {
         boolean hasIcon3 = false;
 
 
-        if (markerOptionsMap.containsKey("title") && markerOptionsMap.get("title") != null) {
+        if (markerOptionsMap.containsKey("title") && markerOptionsMap.get("title") != null && markerOptionsMap.get("title") != null) {
 
-            bitmapDescriptor = getBitmapDescriptor(markerOptionsMap, bitmapDescriptor, titleHorizontal);
+            if (markerOptionsMap.get("title") != "")
+                bitmapDescriptor = getBitmapDescriptor(markerOptionsMap, bitmapDescriptor, titleHorizontal);
 
             if (null == bitmapDescriptor) return false;
 
@@ -286,7 +287,8 @@ public class MarkerHandler extends OverlayHandler {
                         BitmapDescriptorFactory.fromAsset("flutter_assets/" + icon2);
                 if (null != bitmapDescriptor2) {
                     hasIcon2 = true;
-                    bitmapDescriptor2 = getBitmapDescriptor(markerOptionsMap, bitmapDescriptor2, titleHorizontal);
+                    if (markerOptionsMap.get("title") != "")
+                        bitmapDescriptor2 = getBitmapDescriptor(markerOptionsMap, bitmapDescriptor2, titleHorizontal);
                 }
             }
 
@@ -296,7 +298,8 @@ public class MarkerHandler extends OverlayHandler {
                         BitmapDescriptorFactory.fromAsset("flutter_assets/" + icon3);
                 if (null != bitmapDescriptor3) {
                     hasIcon3 = true;
-                    bitmapDescriptor3 = getBitmapDescriptor(markerOptionsMap, bitmapDescriptor3, titleHorizontal);
+                    if (markerOptionsMap.get("title") != "")
+                        bitmapDescriptor3 = getBitmapDescriptor(markerOptionsMap, bitmapDescriptor3, titleHorizontal);
                 }
             }
         }
@@ -306,7 +309,7 @@ public class MarkerHandler extends OverlayHandler {
             mMarkerBitmapMap.put(id, bitmapDescriptor);
             if (titleHorizontal) {
                 markerOptions.anchor(0.0f, 0);
-            }else {
+            } else {
                 markerOptions.anchor(0.5f, 0);
             }
         } else {
@@ -324,7 +327,7 @@ public class MarkerHandler extends OverlayHandler {
             markerOptions.icons(bs);
             if (titleHorizontal) {
                 markerOptions.anchor(0.0f, 0.5f);
-            }else {
+            } else {
                 markerOptions.anchor(0.5f, 0);
             }
         }
