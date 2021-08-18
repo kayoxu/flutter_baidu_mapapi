@@ -26,7 +26,7 @@ import io.flutter.plugin.common.MethodChannel;
 /**
  * Copyright (C) 2019 Baidu, Inc. All Rights Reserved.
  */
-public class BMFMapController implements MethodChannel.MethodCallHandler, BaiduMapInterface {
+public  class BMFMapController implements MethodChannel.MethodCallHandler, BaiduMapInterface {
 
     private final MethodChannel mMethodChannel;
 

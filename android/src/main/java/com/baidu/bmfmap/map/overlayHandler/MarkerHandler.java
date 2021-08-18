@@ -8,6 +8,9 @@ import java.util.Map;
 
 import com.baidu.bmfmap.BMFMapController;
 import com.baidu.bmfmap.R;
+import com.baidu.bmfmap.map_base.VMCarItem;
+import com.baidu.bmfmap.map_base.clusterutil.clustering.Cluster;
+import com.baidu.bmfmap.map_base.clusterutil.clustering.ClusterManager;
 import com.baidu.bmfmap.utils.Constants;
 import com.baidu.bmfmap.utils.Env;
 import com.baidu.bmfmap.utils.converter.FlutterDataConveter;
@@ -19,6 +22,7 @@ import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.Overlay;
 import com.baidu.mapapi.model.LatLng;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -40,7 +44,7 @@ public class MarkerHandler extends OverlayHandler {
     private static final String TAG = "MarkerHandler";
 
     private final HashMap<String, Overlay> mMarkerMap = new HashMap<>();
-    private final HashMap<String, BitmapDescriptor> mMarkerBitmapMap = new HashMap<>();
+    private final static HashMap<String, BitmapDescriptor> mMarkerBitmapMap = new HashMap<>();
 
     public MarkerHandler(BMFMapController bmfMapController) {
         super(bmfMapController);
@@ -123,6 +127,10 @@ public class MarkerHandler extends OverlayHandler {
     }
 
     private boolean addMarkerImp(Map<String, Object> argument) {
+        return addMarkerImp(argument, null);
+    }
+
+    private boolean addMarkerImp(Map<String, Object> argument, VMCarItem item) {
         if (Env.DEBUG) {
             Log.d(TAG, "addMarkerImp enter");
         }
@@ -147,6 +155,7 @@ public class MarkerHandler extends OverlayHandler {
             return false;
         }
 
+
         String id = new TypeConverter<String>().getValue(argument, "id");
         if (TextUtils.isEmpty(id)) {
             return false;
@@ -156,9 +165,6 @@ public class MarkerHandler extends OverlayHandler {
             return false;
         }
 
-        MarkerOptions markerOptions = new MarkerOptions();
-
-        setScreenLockPoint(argument, markerOptions);
 
         // icon是必须的
         String icon = (String) argument.get("icon");
@@ -166,11 +172,6 @@ public class MarkerHandler extends OverlayHandler {
             return false;
         }
 
-        if (!setMarkerOptions(argument, markerOptions, id, icon)) {
-            return false;
-        }
-
-        Overlay overlay = mBaiduMap.addOverlay(markerOptions);
 
         Bundle bundle = new Bundle();
         bundle.putString("id", id);
@@ -178,15 +179,32 @@ public class MarkerHandler extends OverlayHandler {
         bundle.putString("title", (String) argument.get("title"));
         bundle.putString("identifier", (String) argument.get("identifier"));
 
-        overlay.setExtraInfo(bundle);
+        if (null == item) {
+            MarkerOptions markerOptions = new MarkerOptions();
 
-        mMarkerMap.put(id, overlay);
+            if (!setMarkerOptions(argument, markerOptions, id, icon)) {
+                return false;
+            }
+            setScreenLockPoint(argument, markerOptions);
 
+            Overlay overlay = mBaiduMap.addOverlay(markerOptions);
+            overlay.setExtraInfo(bundle);
+            mMarkerMap.put(id, overlay);
+        } else {
+            Map<String, Object> latlngMap = (Map<String, Object>) argument.get("position");
+            LatLng latLng = FlutterDataConveter.mapToLatlng(latlngMap);
+            if (null == latLng) {
+                return false;
+            }
+            item.setBundle(bundle);
+            item.setArgument(argument);
+            item.setmPosition(latLng);
+        }
         return true;
     }
 
-    private boolean setScreenLockPoint(Map<String, Object> argumentMap,
-                                       MarkerOptions markerOptions) {
+    public static boolean setScreenLockPoint(Map<String, Object> argumentMap,
+                                             MarkerOptions markerOptions) {
         if (null == argumentMap || null == markerOptions) {
             return false;
         }
@@ -242,8 +260,8 @@ public class MarkerHandler extends OverlayHandler {
      *
      * @return
      */
-    private boolean setMarkerOptions(Map<String, Object> markerOptionsMap,
-                                     MarkerOptions markerOptions, String id, String icon) {
+    public boolean setMarkerOptions(Map<String, Object> markerOptionsMap,
+                                    MarkerOptions markerOptions, String id, String icon) {
 
         Map<String, Object> latlngMap = (Map<String, Object>) markerOptionsMap.get("position");
 
@@ -388,9 +406,180 @@ public class MarkerHandler extends OverlayHandler {
         return true;
     }
 
+    public static boolean setMarkerOptions2(Context context, Map<String, Object> markerOptionsMap,
+                                            MarkerOptions markerOptions, String id, String icon) {
+
+        Map<String, Object> latlngMap = (Map<String, Object>) markerOptionsMap.get("position");
+
+        LatLng latLng = FlutterDataConveter.mapToLatlng(latlngMap);
+        if (null == latLng) {
+            if (Env.DEBUG) {
+                Log.d(TAG, "latLng is null");
+            }
+            return false;
+        }
+        markerOptions.position(latLng);
+
+        BitmapDescriptor bitmapDescriptor2 = null;
+        BitmapDescriptor bitmapDescriptor3 = null;
+        BitmapDescriptor bitmapDescriptor =
+                BitmapDescriptorFactory.fromAsset("flutter_assets/" + icon);
+        if (null == bitmapDescriptor) {
+            return false;
+        }
+
+        boolean titleHorizontal = false;
+        Object horizontal = markerOptionsMap.get("titleHorizontal");
+        if (markerOptionsMap.containsKey("titleHorizontal") && (horizontal instanceof Boolean)) {
+            titleHorizontal = (boolean) markerOptionsMap.get("titleHorizontal");
+        }
+
+        boolean hasIcon2 = false;
+        boolean hasIcon3 = false;
+
+
+        if (markerOptionsMap.containsKey("title") && markerOptionsMap.get("title") != null && markerOptionsMap.get("title") != null) {
+
+            if (markerOptionsMap.get("title") != "")
+                bitmapDescriptor = getBitmapDescriptor2(context,markerOptionsMap, bitmapDescriptor, titleHorizontal);
+
+            if (null == bitmapDescriptor) return false;
+
+            if (markerOptionsMap.get("icon2") != null) {
+                String icon2 = (String) markerOptionsMap.get("icon2");
+                bitmapDescriptor2 =
+                        BitmapDescriptorFactory.fromAsset("flutter_assets/" + icon2);
+                if (null != bitmapDescriptor2) {
+                    hasIcon2 = true;
+                    if (markerOptionsMap.get("title") != "")
+                        bitmapDescriptor2 = getBitmapDescriptor2(context,markerOptionsMap, bitmapDescriptor2, titleHorizontal);
+                }
+            }
+
+            if (markerOptionsMap.get("icon3") != null) {
+                String icon3 = (String) markerOptionsMap.get("icon3");
+                bitmapDescriptor3 =
+                        BitmapDescriptorFactory.fromAsset("flutter_assets/" + icon3);
+                if (null != bitmapDescriptor3) {
+                    hasIcon3 = true;
+                    if (markerOptionsMap.get("title") != "")
+                        bitmapDescriptor3 = getBitmapDescriptor2(context,markerOptionsMap, bitmapDescriptor3, titleHorizontal);
+                }
+            }
+        }
+
+        if (!hasIcon2 && !hasIcon3) {
+            markerOptions.icon(bitmapDescriptor);
+            mMarkerBitmapMap.put(id, bitmapDescriptor);
+            if (titleHorizontal) {
+                markerOptions.anchor(0.0f, 0);
+            } else {
+                markerOptions.anchor(0.5f, 0);
+            }
+        } else {
+            ArrayList<BitmapDescriptor> bs = new ArrayList<>();
+            bs.add(bitmapDescriptor);
+
+            if (null != bitmapDescriptor2) {
+                bs.add(bitmapDescriptor2);
+                mMarkerBitmapMap.put(id + 1000000, bitmapDescriptor2);
+            }
+            if (null != bitmapDescriptor3) {
+                bs.add(bitmapDescriptor3);
+                mMarkerBitmapMap.put(id + 1000001, bitmapDescriptor3);
+            }
+            markerOptions.icons(bs);
+            if (titleHorizontal) {
+                markerOptions.anchor(0.0f, 0.5f);
+            } else {
+                markerOptions.anchor(0.5f, 0);
+            }
+        }
+        //centerOffset
+        Map<String, Object> centerOffset =
+                new TypeConverter<Map<String, Object>>().getValue(markerOptionsMap, "centerOffset");
+        if (null != centerOffset) {
+            Double y = new TypeConverter<Double>().getValue(centerOffset, "y");
+            if (null != y) {
+                markerOptions.yOffset(y.intValue());
+            }
+        }
+
+        Boolean enable = new TypeConverter<Boolean>().getValue(markerOptionsMap, "enabled");
+        if (markerOptionsMap.containsKey("enabled")) {
+            if (Env.DEBUG) {
+                Log.d(TAG, "enbale" + enable);
+            }
+            markerOptions.clickable(enable);
+        }
+
+        Boolean draggable = new TypeConverter<Boolean>().getValue(markerOptionsMap, "draggable");
+        if (null != draggable) {
+            markerOptions.draggable(draggable);
+        }
+
+        Integer zIndex = new TypeConverter<Integer>().getValue(markerOptionsMap, "zIndex");
+        if (null != zIndex) {
+            markerOptions.zIndex(zIndex);
+        }
+
+        Boolean visible = new TypeConverter<Boolean>().getValue(markerOptionsMap, "visible");
+        if (null != visible) {
+            markerOptions.visible(visible);
+        }
+
+        Double scaleX = new TypeConverter<Double>().getValue(markerOptionsMap, "scaleX");
+        if (null != scaleX) {
+            markerOptions.scaleX(scaleX.floatValue());
+        }
+
+        Double scaleY = new TypeConverter<Double>().getValue(markerOptionsMap, "scaleY");
+        if (null != scaleY) {
+            markerOptions.scaleY(scaleY.floatValue());
+        }
+
+        Double alpha = new TypeConverter<Double>().getValue(markerOptionsMap, "alpha");
+        if (null != alpha) {
+            markerOptions.alpha(alpha.floatValue());
+        }
+
+        Boolean isPerspective =
+                new TypeConverter<Boolean>().getValue(markerOptionsMap, "isPerspective");
+        if (null != isPerspective) {
+            markerOptions.perspective(isPerspective);
+        }
+
+        return true;
+    }
+
     @Nullable
     private BitmapDescriptor getBitmapDescriptor(Map<String, Object> markerOptionsMap, BitmapDescriptor bitmapDescriptor, boolean titleHorizontal) {
         LayoutInflater inflater = LayoutInflater.from(mMapController.getContext());
+        View root = inflater.inflate(titleHorizontal ? R.layout.map_dot_info2 : R.layout.map_dot_info, null);
+        if (markerOptionsMap.get("title2") != null) {
+            root = inflater.inflate(titleHorizontal ? R.layout.map_dot_info_more2 : R.layout.map_dot_info_more, null);
+            TextView tv2 = root.findViewById(R.id.title2);
+            tv2.setText(markerOptionsMap.get("title2") + "");
+            if (markerOptionsMap.containsKey("title2Color") && markerOptionsMap.get("title2Color") != null) {
+                tv2.setTextColor(Color.parseColor("#" + (String) markerOptionsMap.get("title2Color")));
+            }
+        }
+
+        TextView tv = root.findViewById(R.id.title);
+        ImageView iv = root.findViewById(R.id.icon);
+        tv.setText(markerOptionsMap.get("title") + "");
+        iv.setImageBitmap(bitmapDescriptor.getBitmap());
+        if (markerOptionsMap.containsKey("titleColor") && markerOptionsMap.get("titleColor") != null) {
+            tv.setTextColor(Color.parseColor("#" + (String) markerOptionsMap.get("titleColor")));
+        }
+
+        bitmapDescriptor = BitmapDescriptorFactory.fromBitmap(getViewBitmap(root));
+        return bitmapDescriptor;
+    }
+
+    @Nullable
+    private static BitmapDescriptor getBitmapDescriptor2(Context context,Map<String, Object> markerOptionsMap, BitmapDescriptor bitmapDescriptor, boolean titleHorizontal) {
+        LayoutInflater inflater = LayoutInflater.from(context);
         View root = inflater.inflate(titleHorizontal ? R.layout.map_dot_info2 : R.layout.map_dot_info, null);
         if (markerOptionsMap.get("title2") != null) {
             root = inflater.inflate(titleHorizontal ? R.layout.map_dot_info_more2 : R.layout.map_dot_info_more, null);
@@ -422,10 +611,51 @@ public class MarkerHandler extends OverlayHandler {
             return false;
         }
 
+
         List<Object> arguments = call.arguments();
         if (null == arguments) {
             return false;
         }
+
+        if (arguments.size() > 99) {
+            ArrayList<VMCarItem> clusterList = new ArrayList<>();
+            ClusterManager clusterManager = new ClusterManager(mMapController.getContext(), mMapController.getBaiduMap());
+            mMapController.getBaiduMap().setOnMapStatusChangeListener(clusterManager);
+            // 设置maker点击时的响应
+            mMapController.getBaiduMap().setOnMarkerClickListener(clusterManager);
+
+            clusterManager.setOnClusterClickListener(new ClusterManager.OnClusterClickListener<VMCarItem>() {
+                @Override
+                public boolean onClusterClick(Cluster<VMCarItem> cluster) {
+//                Toast.makeText(activity, "有" + cluster.getSize() + "个点", Toast.LENGTH_SHORT).show();
+                    return false;
+                }
+
+            });
+            clusterManager.setOnClusterItemClickListener(new ClusterManager.OnClusterItemClickListener<VMCarItem>() {
+                @Override
+                public boolean onClusterItemClick(VMCarItem item) {
+//                Toast.makeText(activity,
+//                        "点击单个Item", Toast.LENGTH_SHORT).show();
+
+                    return false;
+                }
+            });
+
+            Iterator itr = arguments.iterator();
+            while (itr.hasNext()) {
+                Map<String, Object> argument = (Map<String, Object>) itr.next();
+
+                VMCarItem item = new VMCarItem();
+                addMarkerImp(argument, item);
+                clusterList.add(item);
+            }
+
+            clusterManager.addItems(clusterList);
+            clusterManager.cluster();
+            return true;
+        }
+
 
         Iterator itr = arguments.iterator();
         while (itr.hasNext()) {
