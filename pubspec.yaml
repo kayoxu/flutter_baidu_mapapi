@@ -42,8 +42,8 @@ flutter:
         pluginClass: FlutterBmfmapPlugin
       ios:
         pluginClass: FlutterBmfmapPlugin
-      web:
-        pluginClass: FlutterBmfmapPluginWeb
+#      web:
+#        pluginClass: FlutterBmfmapPluginWeb
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
   #  - images/a_dot_burr.jpeg

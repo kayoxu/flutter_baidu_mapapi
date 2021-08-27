@@ -10,35 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6cc408d2-d44c-4286-a1a0-dca2682764f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/VMCarItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/MarkerManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/clustering/Cluster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/clustering/ClusterItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/clustering/ClusterManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/clustering/algo/Algorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/clustering/algo/NonHierarchicalDistanceBasedAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/clustering/algo/PreCachingAlgorithmDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/clustering/algo/StaticCluster.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/clustering/view/ClusterRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/clustering/view/DefaultClusterRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/projection/Bounds.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/projection/Point.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/projection/SphericalMercatorProjection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/quadtree/PointQuadTree.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/ui/IconGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/ui/RotationLayout.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map_base/clusterutil/ui/SquareTextView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/res/drawable/circle_800081ff_5.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/res/layout/map_text_bubble.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../android/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/BMFMapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/BMFMapController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map/overlayHandler/MarkerHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../android/src/main/java/com/baidu/bmfmap/map/overlayHandler/MarkerHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/-2084040967/android.flutter_plugin_android_lifecycle.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/-2084040967/android.flutter_plugin_android_lifecycle.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/-907001116/android.flutter_baidu_mapapi_map.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/-907001116/android.flutter_baidu_mapapi_map.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/1499633673/android.flutter_baidu_mapapi_base.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/1499633673/android.flutter_baidu_mapapi_base.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../pubspec.yaml" afterDir="false" />
     </list>

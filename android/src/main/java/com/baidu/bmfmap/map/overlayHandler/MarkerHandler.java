@@ -617,7 +617,7 @@ public class MarkerHandler extends OverlayHandler {
             return false;
         }
 
-        if (arguments.size() > 99) {
+        if (arguments.size() > 3) {
             ArrayList<VMCarItem> clusterList = new ArrayList<>();
             ClusterManager clusterManager = new ClusterManager(mMapController.getContext(), mMapController.getBaiduMap());
             mMapController.getBaiduMap().setOnMapStatusChangeListener(clusterManager);
