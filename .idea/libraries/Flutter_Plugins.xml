@@ -3,7 +3,7 @@
     <CLASSES>
       <root url="file://$PROJECT_DIR$" />
       <root url="file://$USER_HOME$/fvm/versions/stable/.pub-cache/hosted/pub.flutter-io.cn/flutter_plugin_android_lifecycle-2.0.2" />
-      <root url="file://$PROJECT_DIR$/../flutter_baidu_mapapi_base" />
+      <root url="file://$USER_HOME$/fvm/versions/stable/.pub-cache/git/flutter_baidu_mapapi-00387c4a86c562bf95dde3c8d5e51a5aae68ad14" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

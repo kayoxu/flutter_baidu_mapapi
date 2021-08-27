@@ -58,9 +58,11 @@ packages:
   flutter_baidu_mapapi_base:
     dependency: "direct main"
     description:
-      path: "/Users/kayoxu/Desktop/平台公司/data/flutter_baidu_mapapi_base"
-      relative: false
-    source: path
+      path: "."
+      ref: base
+      resolved-ref: "00387c4a86c562bf95dde3c8d5e51a5aae68ad14"
+      url: "https://gitee.com/kayoxu/flutter_baidu_mapapi.git"
+    source: git
     version: "2.0.1"
   flutter_plugin_android_lifecycle:
     dependency: "direct main"
